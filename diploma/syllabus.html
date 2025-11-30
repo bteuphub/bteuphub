@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syllabus - BTEUP HUB</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #ff4400;
+            --primary-hover: #ffffff;
+            --text-on-primary: #ffffff;
+            --text-on-hover: #ff4400;
+            --footer-bg: #000000;
+            --card-bg: #ffffff;
+            --card-hover: #f8f9fa;
+            --section-bg: #f8f9fa;
+            --text-dark: #333333;
+            --text-light: #f5f5f5;
+            --border-color: #ff4400;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-dark);
+            background-color: #f9fafb;
+        }
+        
+        /* NAVBAR STYLES - Matching PYQ.html */
+        .navbar {
+            background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(248, 249, 250, 1) 100%);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            padding: 15px 0;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-scrolled {
+            padding: 10px 0;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(240, 240, 240, 1) 100%) !important;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Navbar Brand */
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            white-space: nowrap;
+        }
+
+        .navbar-brand i {
+            font-size: 1.8rem;
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+
+        .navbar-brand span:first-child {
+            color: var(--primary-color);
+            font-weight: 800;
+        }
+
+        .navbar-brand span:last-child {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        /* Navbar Links */
+        .navbar-nav {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            overflow-x: auto;
+            white-space: nowrap;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .navbar-nav::-webkit-scrollbar {
+            display: none;
+        }
+
+        .navbar-nav .nav-link {
+            color: var(--text-dark) !important;
+            font-weight: 500;
+            padding: 8px 12px !important;
+            margin: 0 3px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        .navbar-nav .nav-link i {
+            margin-right: 6px;
+            width: 18px;
+            text-align: center;
+            font-size: 1rem;
+            color: var(--dark-color);
+            transition: all 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: var(--primary-color) !important;
+            background-color: rgba(255, 68, 0, 0.1);
+        }
+
+        .navbar-nav .nav-link:hover i {
+            transform: scale(1.1);
+            color: var(--primary-color);
+        }
+
+        .navbar-nav .nav-link.active {
+            color: var(--primary-color) !important;
+            background: rgba(255, 68, 0, 0.1);
+            font-weight: 600;
+        }
+
+        .navbar-nav .nav-link.active i {
+            color: var(--primary-color);
+        }
+
+        /* WhatsApp Button */
+        .btn-whatsapp-join {
+            background: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            color: var(--text-on-primary);
+            padding: 6px 15px;
+            font-weight: 600;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            margin-left: 10px;
+            font-size: 0.85rem;
+            white-space: nowrap;
+            box-shadow: 0 5px 15px rgba(255, 68, 0, 0.4);
+        }
+
+        .btn-whatsapp-join:hover {
+            background: var(--primary-hover);
+            color: var(--text-on-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 68, 0, 0.5);
+        }
+
+        /* Mobile view adjustments */
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                overflow-x: auto;
+            }
+            
+            .navbar-nav {
+                flex-direction: row;
+                width: max-content;
+            }
+            
+            .navbar-nav .nav-link {
+                padding: 10px 12px !important;
+            }
+            
+            .navbar-nav .btn-whatsapp-join {
+                margin-left: 10px;
+                margin-top: 0;
+                width: auto;
+            }
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 10px 0;
+            margin-bottom: 30px;
+        }
+        
+        /* Additional Navbar */
+        .secondary-navbar {
+            background-color: var(--footer-bg);
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .sidebar-column {
+            position: relative;
+            padding-right: 30px;
+        }
+        
+        /* Vertical divider line */
+        .sidebar-column::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 2px;
+            background: linear-gradient(to bottom, 
+            #202020 0%, 
+            #000000 50%, 
+            #242323 100%);
+        }
+        
+        .branch-card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+            overflow: hidden;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            background: var(--card-bg);
+        }
+        
+        .branch-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            background: var(--card-hover);
+        }
+        
+        .branch-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 15px 20px;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+        
+        .branch-list {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            overflow-y: auto;
+            flex-grow: 1;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        .branch-list::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .branch-list li {
+            padding: 15px 20px;
+            border-bottom: 1px solid #eee;
+            transition: background-color 0.2s;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .branch-list li:hover {
+            background-color: rgba(255, 68, 0, 0.05);
+        }
+        
+        .branch-list li.active {
+            background-color: rgba(255, 68, 0, 0.1);
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        .branch-icon {
+            font-size: 1.2rem;
+            width: 24px;
+            text-align: center;
+            color: var(--primary-color);
+        }
+        
+        /* Syllabus Content */
+        .syllabus-content {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            padding: 40px;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .syllabus-placeholder {
+            color: #6c757d;
+        }
+        
+        .syllabus-placeholder i {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            color: #dee2e6;
+        }
+        
+        .syllabus-details {
+            text-align: left;
+            display: none;
+        }
+        
+        .syllabus-details.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .syllabus-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #e9ecef;
+        }
+        
+        .branch-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 0;
+        }
+        
+        .syllabus-stats {
+            display: flex;
+            gap: 25px;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.85rem;
+            color: #6c757d;
+        }
+        
+        .syllabus-info {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .info-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .info-item:last-child {
+            border-bottom: none;
+        }
+        
+        .info-label {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+        
+        .info-value {
+            color: #6c757d;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        .btn-preview, .btn-download {
+            background-color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            color: var(--text-on-primary);
+            text-align: center;
+            transition: all 0.3s ease;
+            border-radius: 10px;
+            display: block;
+            padding: 12px 35px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+        
+        .btn-preview:hover, .btn-download:hover {
+            background-color: var(--primary-hover);
+            color: var(--text-on-hover);
+            text-decoration: none;
+        }
+        
+        /* Responsive divider */
+        @media (max-width: 991.98px) {
+            .sidebar-column::after {
+                display: none;
+            }
+            .sidebar-column {
+                padding-right: 15px;
+                margin-bottom: 30px;
+            }
+            
+            .syllabus-header {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+            
+            .syllabus-stats {
+                justify-content: center;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+        }
+
+        /* PDF Viewer Modal Styles */
+        .pdf-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1050;
+        }
+        
+        .pdf-modal-content {
+            position: relative;
+            background-color: #fefefe;
+            margin: 2% auto;
+            padding: 0;
+            width: 95%;
+            height: 90%;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .pdf-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        .pdf-modal-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 0;
+        }
+        
+        .pdf-modal-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #6c757d;
+        }
+        
+        .pdf-modal-body {
+            flex: 1;
+            padding: 0;
+            overflow: hidden;
+        }
+        
+        .pdf-modal-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .pdf-modal-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background-color: #f8f9fa;
+            border-top: 1px solid #dee2e6;
+        }
+        
+        .btn-fullscreen {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-fullscreen:hover {
+            background-color: white;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+        
+        /* Fullscreen styles */
+        .pdf-modal.fullscreen {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .pdf-modal.fullscreen .pdf-modal-content {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            border-radius: 0;
+        }
+        
+        /* Footer Styles */
+        footer {
+            background: var(--footer-bg);
+            color: white;
+            padding: 70px 0 20px;
+            margin-top: 50px;
+        }
+        
+        footer h4,h5{
+            color:#ff4400;
+        }
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation - Matching PYQ.html -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-graduation-cap"></i>
+                <span>BTEUP</span> <span>HUB</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">
+                            <i class="fas fa-home"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="diploma/syllabus.html">
+                            <i class="fas fa-book"></i> Syllabus
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="diploma/notes.html">
+                            <i class="fas fa-file-pdf"></i> Notes & PDFs
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="diploma/book.html">
+                            <i class="fas fa-laptop-code"></i> e books
+                        </a>
+                    </li>  
+                    <li class="nav-item">
+                        <a class="nav-link" href="diploma/pyq.html">
+                            <i class="fas fa-file-alt"></i> Previous Papers
+                        </a>
+                    </li>                                      
+                    <li class="nav-item">
+                        <a class="nav-link" href="diploma/project.html">
+                            <i class="fas fa-project-diagram"></i> Project
+                        </a>
+                    </li>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Additional Navbar with Footer Background -->
+    <div class="secondary-navbar"></div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="display-6 fw-bold">Diploma  Syllabus</h1>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="row">
+            <!-- Sidebar with Branches -->
+            <div class="col-lg-3 sidebar-column">
+                <div class="branch-card">
+                    <div class="branch-header">
+                        Engineering Branches
+                    </div>
+                    <ul class="branch-list scrollable-container" id="branchList">
+                        <!-- Branch items will be dynamically loaded here -->
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Main Content Area -->
+            <div class="col-lg-9">
+                <div class="syllabus-content">
+                    <!-- Placeholder when no branch is selected -->
+                    <div class="syllabus-placeholder" id="syllabusPlaceholder">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3>Select a Branch</h3>
+                        <p>Choose your engineering branch from the sidebar to view and download the complete syllabus.</p>
+                    </div>
+                    
+                    <!-- Syllabus Details when branch is selected -->
+                    <div class="syllabus-details" id="syllabusDetails">
+                        <div class="syllabus-header">
+                            <h2 class="branch-title" id="branchTitle">Computer Science & Engineering</h2>
+                            <div class="syllabus-stats">
+                                <div class="stat-item">
+                                    <span class="stat-value" id="downloadCount">1,245</span>
+                                    <span class="stat-label">Downloads</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value" id="fileSize">2.4 MB</span>
+                                    <span class="stat-label">File Size</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value" id="pages">48</span>
+                                    <span class="stat-label">Pages</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="syllabus-info">
+                            <h5 class="mb-3">Syllabus Information</h5>
+                            <div class="info-item">
+                                <span class="info-label">Format:</span>
+                                <span class="info-value">PDF Document</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Includes:</span>
+                                <span class="info-value">All 8 Semesters</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Last Updated:</span>
+                                <span class="info-value" id="lastUpdated">January 15, 2024</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Curriculum:</span>
+                                <span class="info-value">BTEUP Latest Pattern</span>
+                            </div>
+                        </div>
+                        
+                        <div class="action-buttons">
+                            <button class="btn-preview" id="previewBtn">
+                                <i class="fas fa-eye"></i>
+                                Preview Syllabus
+                            </button>
+                            <button class="btn-download" id="downloadBtn">
+                                <i class="fas fa-download"></i>
+                                Download PDF
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PDF Viewer Modal -->
+    <div class="pdf-modal" id="pdfModal">
+        <div class="pdf-modal-content">
+            <div class="pdf-modal-header">
+                <h3 class="pdf-modal-title" id="pdfModalTitle">PDF Viewer</h3>
+                <button class="pdf-modal-close" id="pdfModalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="pdf-modal-body">
+                <iframe class="pdf-modal-iframe" id="pdfIframe" src=""></iframe>
+            </div>
+            <div class="pdf-modal-footer">
+                <div class="pdf-modal-actions">
+                    <button class="btn-fullscreen" id="btnFullscreen">
+                        <i class="fas fa-expand"></i> Full Screen
+                    </button>
+                </div>
+                <div>
+                    <button class="btn-download" id="btnDownloadPdf">
+                        <i class="fas fa-download"></i> Download
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <!-- Brand Info -->
+                <div class="col-lg-4 mb-4">
+                    <h4 class="mb-3"> <i class="fas fa-graduation-cap"></i>BTEUP HUB</h4>
+                    <p class="mb-4">"Your complete resource hub for Diploma & PG Diploma studies. Providing quality education materials since 2024 - Technical education notes download."</p>
+                </div>
+                
+                <!-- Diploma Resources -->
+                <div class="col-lg-4 mb-4">
+                    <h5 class="mb-3">Diploma Resources</h5>
+                    <div class="footer-links">
+                        <div class="row">
+                            <div class="col-6">
+                                <p><a href="diploma/syllabus.html">Syllabus</a></p>
+                                <p><a href="diploma/pyq.html">PYQ</a></p>
+                                <p><a href="diploma/notes.html">Notes</a></p>
+                            </div>
+                            <div class="col-6">
+                                <p><a href="diploma/book.html">Books</a></p>
+                                <p><a href="diploma/project.html">Projects</a></p>
+                                <p><a href="/">Lab Manuals</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- PG Diploma Resources -->
+                <div class="col-lg-4 mb-4">
+                    <h5 class="mb-3">PG Diploma Resources</h5>
+                    <div class="footer-links">
+                        <div class="row">
+                            <div class="col-6">
+                                <p><a href="pg-diploma/syllabus.html">Syllabus</a></p>
+                                <p><a href="pg-diploma/pyq.html">PYQ</a></p>
+                                <p><a href="pg-diploma/notes.html">Notes</a></p>
+                            </div>
+                            <div class="col-6">
+                                <p><a href="pg-diploma/book.html">Books</a></p>
+                                <p><a href="pg-diploma/project.html">Projects</a></p>
+                                <p><a href="/">Lab Manuals</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="copyright text-center">
+                <div class="row">
+                    <div class="col-md-6 text-md-start">
+                         <p><a href="privacy-policy.html" style="color: #e9ecef; text-decoration: none; ">Privacy Policy</a>  | <a href="disclaimer.html" style="color: #e9ecef; text-decoration: none;">Disclaimer</a></p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <p>© 2025 BTEUP HUB. All rights reserved.</p>
+                        <p>Powered by : <span style="color: #ff4400; font-weight: 800;"> HARIOM MAURYA</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script>
+        // Branch data with PDF URLs
+        const branchData = [
+            {
+                id: "cse",
+                name: "Computer Science & Engineering",
+                icon: "fa-laptop-code",
+                downloads: 1245,
+                fileSize: "2.4 MB",
+                pages: 48,
+                lastUpdated: "January 15, 2024",
+                pdfUrl: "https://drive.google.com/file/d/1YOUR_GOOGLE_DRIVE_FILE_ID_1/preview",
+                downloadUrl: "https://drive.google.com/uc?export=download&id=1YOUR_GOOGLE_DRIVE_FILE_ID_1"
+            },
+            {
+                id: "it",
+                name: "Information Technology",
+                icon: "fa-server",
+                downloads: 876,
+                fileSize: "2.1 MB",
+                pages: 42,
+                lastUpdated: "January 12, 2024",
+                pdfUrl: "https://drive.google.com/file/d/1YOUR_GOOGLE_DRIVE_FILE_ID_2/preview",
+                downloadUrl: "https://drive.google.com/uc?export=download&id=1YOUR_GOOGLE_DRIVE_FILE_ID_2"
+            },
+            {
+                id: "electronics",
+                name: "Electronics Engineering",
+                icon: "fa-microchip",
+                downloads: 654,
+                fileSize: "2.3 MB",
+                pages: 45,
+                lastUpdated: "January 10, 2024",
+                pdfUrl: "https://drive.google.com/file/d/1YOUR_GOOGLE_DRIVE_FILE_ID_3/preview",
+                downloadUrl: "https://drive.google.com/uc?export=download&id=1YOUR_GOOGLE_DRIVE_FILE_ID_3"
+            },
+            {
+                id: "electrical",
+                name: "Electrical Engineering",
+                icon: "fa-bolt",
+                downloads: 543,
+                fileSize: "2.2 MB",
+                pages: 44,
+                lastUpdated: "January 8, 2024",
+                pdfUrl: "https://drive.google.com/file/d/1YOUR_GOOGLE_DRIVE_FILE_ID_4/preview",
+                downloadUrl: "https://drive.google.com/uc?export=download&id=1YOUR_GOOGLE_DRIVE_FILE_ID_4"
+            },
+            {
+                id: "mechanical",
+                name: "Mechanical Engineering",
+                icon: "fa-cogs",
+                downloads: 789,
+                fileSize: "2.5 MB",
+                pages: 52,
+                lastUpdated: "January 5, 2024",
+                pdfUrl: "https://drive.google.com/file/d/1YOUR_GOOGLE_DRIVE_FILE_ID_5/preview",
+                downloadUrl: "https://drive.google.com/uc?export=download&id=1YOUR_GOOGLE_DRIVE_FILE_ID_5"
+            },
+            {
+                id: "civil",
+                name: "Civil Engineering",
+                icon: "fa-hard-hat",
+                downloads: 432,
+                fileSize: "2.6 MB",
+                pages: 56,
+                lastUpdated: "January 3, 2024",
+                pdfUrl: "https://drive.google.com/file/d/1YOUR_GOOGLE_DRIVE_FILE_ID_6/preview",
+                downloadUrl: "https://drive.google.com/uc?export=download&id=1YOUR_GOOGLE_DRIVE_FILE_ID_6"
+            },
+            {
+                id: "chemical",
+                name: "Chemical Engineering",
+                icon: "fa-flask",
+                downloads: 321,
+                fileSize: "2.0 MB",
+                pages: 38,
+                lastUpdated: "January 1, 2024",
+                pdfUrl: "https://drive.google.com/file/d/1YOUR_GOOGLE_DRIVE_FILE_ID_7/preview",
+                downloadUrl: "https://drive.google.com/uc?export=download&id=1YOUR_GOOGLE_DRIVE_FILE_ID_7"
+            },
+            {
+                id: "biotech",
+                name: "Biotechnology",
+                icon: "fa-dna",
+                downloads: 298,
+                fileSize: "1.9 MB",
+                pages: 36,
+                lastUpdated: "December 28, 2023",
+                pdfUrl: "https://drive.google.com/file/d/1YOUR_GOOGLE_DRIVE_FILE_ID_8/preview",
+                downloadUrl: "https://drive.google.com/uc?export=download&id=1YOUR_GOOGLE_DRIVE_FILE_ID_8"
+            },
+            {
+                id: "aerospace",
+                name: "Aerospace Engineering",
+                icon: "fa-plane",
+                downloads: 187,
+                fileSize: "2.3 MB",
+                pages: 44,
+                lastUpdated: "December 25, 2023",
+                pdfUrl: "https://drive.google.com/file/d/1YOUR_GOOGLE_DRIVE_FILE_ID_9/preview",
+                downloadUrl: "https://drive.google.com/uc?export=download&id=1YOUR_GOOGLE_DRIVE_FILE_ID_9"
+            },
+            {
+                id: "automobile",
+                name: "Automobile Engineering",
+                icon: "fa-car",
+                downloads: 234,
+                fileSize: "2.2 MB",
+                pages: 42,
+                lastUpdated: "December 20, 2023",
+                pdfUrl: "https://drive.google.com/file/d/1YOUR_GOOGLE_DRIVE_FILE_ID_10/preview",
+                downloadUrl: "https://drive.google.com/uc?export=download&id=1YOUR_GOOGLE_DRIVE_FILE_ID_10"
+            }
+        ];
+
+        // DOM elements
+        const branchList = document.getElementById('branchList');
+        const syllabusPlaceholder = document.getElementById('syllabusPlaceholder');
+        const syllabusDetails = document.getElementById('syllabusDetails');
+        const branchTitle = document.getElementById('branchTitle');
+        const downloadCount = document.getElementById('downloadCount');
+        const fileSize = document.getElementById('fileSize');
+        const pages = document.getElementById('pages');
+        const lastUpdated = document.getElementById('lastUpdated');
+        const previewBtn = document.getElementById('previewBtn');
+        const downloadBtn = document.getElementById('downloadBtn');
+
+        // PDF Modal elements
+        const pdfModal = document.getElementById('pdfModal');
+        const pdfModalTitle = document.getElementById('pdfModalTitle');
+        const pdfIframe = document.getElementById('pdfIframe');
+        const pdfModalClose = document.getElementById('pdfModalClose');
+        const btnFullscreen = document.getElementById('btnFullscreen');
+        const btnDownloadPdf = document.getElementById('btnDownloadPdf');
+
+        // Current selected branch
+        let currentBranch = null;
+        let currentPdfUrl = '';
+        let currentDownloadUrl = '';
+        let isFullscreen = false;
+
+        // Function to generate branch list
+        function generateBranchList() {
+            branchList.innerHTML = '';
+            
+            branchData.forEach(branch => {
+                const branchItem = document.createElement('li');
+                branchItem.setAttribute('data-branch', branch.id);
+                branchItem.innerHTML = `
+                    <div class="branch-icon">
+                        <i class="fas ${branch.icon}"></i>
+                    </div>
+                    <div class="branch-name">${branch.name}</div>
+                `;
+                branchList.appendChild(branchItem);
+            });
+
+            // Add event listeners to branch items
+            document.querySelectorAll('.branch-list li').forEach(item => {
+                item.addEventListener('click', function() {
+                    // Remove active class from all items
+                    document.querySelectorAll('.branch-list li').forEach(i => i.classList.remove('active'));
+                    
+                    // Add active class to clicked item
+                    this.classList.add('active');
+                    
+                    // Get branch data
+                    const branchId = this.getAttribute('data-branch');
+                    const branch = branchData.find(b => b.id === branchId);
+                    
+                    // Update syllabus details
+                    updateSyllabusDetails(branch);
+                    
+                    // Show details and hide placeholder
+                    syllabusPlaceholder.style.display = 'none';
+                    syllabusDetails.classList.add('active');
+                });
+            });
+        }
+
+        // Function to update syllabus details
+        function updateSyllabusDetails(branch) {
+            currentBranch = branch;
+            currentPdfUrl = branch.pdfUrl;
+            currentDownloadUrl = branch.downloadUrl;
+            
+            branchTitle.textContent = branch.name;
+            downloadCount.textContent = branch.downloads.toLocaleString();
+            fileSize.textContent = branch.fileSize;
+            pages.textContent = branch.pages;
+            lastUpdated.textContent = branch.lastUpdated;
+        }
+
+        // Function to open PDF modal
+        function openPdfModal(pdfUrl, downloadUrl, title) {
+            currentPdfUrl = pdfUrl;
+            currentDownloadUrl = downloadUrl;
+            pdfModalTitle.textContent = title;
+            pdfIframe.src = pdfUrl;
+            pdfModal.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
+        
+        // Function to close PDF modal
+        function closePdfModal() {
+            pdfModal.style.display = 'none';
+            pdfIframe.src = '';
+            document.body.style.overflow = 'auto'; // Restore scrolling
+            exitFullscreen();
+        }
+        
+        // Function to toggle fullscreen
+        function toggleFullscreen() {
+            if (!isFullscreen) {
+                enterFullscreen();
+            } else {
+                exitFullscreen();
+            }
+        }
+        
+        // Function to enter fullscreen
+        function enterFullscreen() {
+            const modalContent = document.querySelector('.pdf-modal-content');
+            
+            if (modalContent.requestFullscreen) {
+                modalContent.requestFullscreen();
+            } else if (modalContent.webkitRequestFullscreen) {
+                modalContent.webkitRequestFullscreen();
+            } else if (modalContent.msRequestFullscreen) {
+                modalContent.msRequestFullscreen();
+            }
+            
+            pdfModal.classList.add('fullscreen');
+            btnFullscreen.innerHTML = '<i class="fas fa-compress"></i> Exit Fullscreen';
+            isFullscreen = true;
+        }
+        
+        // Function to exit fullscreen
+        function exitFullscreen() {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.webkitExitFullscreen) {
+                document.webkitExitFullscreen();
+            } else if (document.msExitFullscreen) {
+                document.msExitFullscreen();
+            }
+            
+            pdfModal.classList.remove('fullscreen');
+            btnFullscreen.innerHTML = '<i class="fas fa-expand"></i> Full Screen';
+            isFullscreen = false;
+        }
+        
+        // Function to download PDF
+        function downloadPdf(downloadUrl, title) {
+            // Create a temporary anchor element to trigger download
+            const link = document.createElement('a');
+            link.href = downloadUrl;
+            link.download = `${title.replace(/\s+/g, '_')}.pdf`;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            // Optional: Show a download confirmation
+            alert(`Downloading ${title}.pdf`);
+        }
+
+        // Preview button event
+        previewBtn.addEventListener('click', function() {
+            if (currentBranch) {
+                openPdfModal(currentPdfUrl, currentDownloadUrl, `${currentBranch.name} Syllabus`);
+            } else {
+                alert('Please select a branch first');
+            }
+        });
+
+        // Download button event
+        downloadBtn.addEventListener('click', function() {
+            if (currentBranch) {
+                downloadPdf(currentDownloadUrl, `${currentBranch.name} Syllabus`);
+                
+                // Update download count (in real implementation, this would be done via backend)
+                currentBranch.downloads++;
+                downloadCount.textContent = currentBranch.downloads.toLocaleString();
+            } else {
+                alert('Please select a branch first');
+            }
+        });
+
+        // PDF Modal event listeners
+        pdfModalClose.addEventListener('click', closePdfModal);
+        
+        btnFullscreen.addEventListener('click', toggleFullscreen);
+        
+        btnDownloadPdf.addEventListener('click', function() {
+            downloadPdf(currentDownloadUrl, pdfModalTitle.textContent);
+        });
+        
+        // Close modal when clicking outside the content
+        pdfModal.addEventListener('click', function(event) {
+            if (event.target === pdfModal) {
+                closePdfModal();
+            }
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && pdfModal.style.display === 'block') {
+                closePdfModal();
+            }
+        });
+        
+        // Handle fullscreen change events
+        document.addEventListener('fullscreenchange', handleFullscreenChange);
+        document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
+        document.addEventListener('msfullscreenchange', handleFullscreenChange);
+        
+        function handleFullscreenChange() {
+            if (!document.fullscreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {
+                exitFullscreen();
+            }
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            generateBranchList();
+        });
+    </script>
+</body>
+</html>
