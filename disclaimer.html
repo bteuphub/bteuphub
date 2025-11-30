@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disclaimer - BTEUP HUB</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #ff4400;
+            --primary-light: #ff6a33;
+            --primary-dark: #cc3600;
+            --secondary-color: #000000;
+            --light-color: #f8f9fa;
+            --dark-color: #1a1a1a;
+            --text-light: #f5f5f5;
+            --text-dark: #333333;
+            --card-bg: #ffffff;
+            --section-bg: #f8f9fa;
+            --footer-bg: #000000;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-dark);
+            background-color: #f9fafb;
+            overflow-x: hidden;
+        }
+        
+        /* Navbar */
+        .navbar {
+            background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(248, 249, 250, 1) 100%);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            padding: 15px 0;
+            transition: all 0.3s ease;
+            position: sticky;
+            top: 0;
+            z-index: 1020;
+            width: 100%;
+        }
+        
+        .navbar-scrolled {
+            padding: 10px 0;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(240, 240, 240, 1) 100%) !important;
+            backdrop-filter: blur(10px);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            white-space: nowrap;
+        }
+        
+        .navbar-brand i {
+            font-size: 1.8rem;
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+        
+        .navbar-brand span:first-child {
+            color: var(--primary-color);
+            font-weight: 800;
+        }
+        
+        .navbar-brand span:last-child {
+            color: var(--primary-dark);
+            font-weight: 700;
+        }
+        
+        .navbar-nav {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            overflow-x: auto;
+            white-space: nowrap;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        .navbar-nav::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .navbar-nav .nav-link {
+            color: #343a40 !important;
+            font-weight: 500;
+            padding: 8px 12px !important;
+            margin: 0 3px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+        
+        .navbar-nav .nav-link i {
+            margin-right: 6px;
+            width: 18px;
+            text-align: center;
+            font-size: 1rem;
+            color: var(--dark-color);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            color: var(--primary-color) !important;
+            background-color: rgba(255, 68, 0, 0.1);
+        }
+        
+        .navbar-nav .nav-link:hover i {
+            transform: scale(1.1);
+            color: var(--primary-light);
+        }
+        
+        .navbar-nav .nav-link.active {
+            color: var(--primary-color) !important;
+            background: rgba(255, 68, 0, 0.1);
+            font-weight: 600;
+        }
+        
+        .navbar-nav .nav-link.active i {
+            color: var(--primary-color);
+        }
+        
+        .btn-whatsapp-join {
+            background: linear-gradient(135deg, #00c951, #00a843);
+            border: none;
+            color: white;
+            padding: 6px 15px;
+            font-weight: 600;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            margin-left: 10px;
+            font-size: 0.85rem;
+            white-space: nowrap;
+            box-shadow: 0 5px 15px rgba(0, 201, 81, 0.4);
+        }
+        
+        .btn-whatsapp-join:hover {
+            background: linear-gradient(135deg, #00a843, #008c35);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 168, 67, 0.5);
+        }
+        
+        /* Mobile view में भी single line रखने के लिए */
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                overflow-x: auto;
+            }
+            
+            .navbar-nav {
+                flex-direction: row;
+                width: max-content;
+            }
+            
+            .navbar-nav .nav-link {
+                padding: 10px 12px !important;
+            }
+            
+            .navbar-nav .btn-whatsapp-join {
+                margin-left: 10px;
+                margin-top: 0;
+                width: auto;
+            }
+        }
+        
+        .navbar-collapse {
+            flex-grow: 0;
+        }
+        
+        /* DISCLAIMER PAGE SPECIFIC STYLES */
+        .page-header {
+            background: linear-gradient(90deg, var(--primary-dark), var(--primary-color));
+            color: white;
+            padding: 100px 0 50px;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="%23ffffff" opacity="0.1"><polygon points="1000,0 1000,100 0,100"></polygon></svg>');
+            background-size: cover;
+        }
+        
+        .content-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            padding: 40px;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+        }
+        
+        .content-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+        
+        .disclaimer-section {
+            margin-bottom: 40px;
+        }
+        
+        .disclaimer-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            display: inline-block;
+            padding: 15px;
+            border-radius: 50%;
+            background: rgba(255, 68, 0, 0.1);
+        }
+        
+        .gradient-btn {
+            background: linear-gradient(90deg, var(--primary-dark), var(--primary-color));
+            border: none;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 68, 0, 0.4);
+        }
+        
+        .gradient-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 68, 0, 0.5);
+            color: white;
+        }
+        
+        .accent-btn {
+            background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+            border: none;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+        }
+        
+        .accent-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
+            color: white;
+        }
+        
+        .language-toggle {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            z-index: 1000;
+        }
+        
+        .language-btn {
+            background: white;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .language-btn:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        footer {
+            background: var(--footer-bg);
+            color: white;
+            padding: 60px 0 20px;
+            margin-top: 60px;
+        }
+        
+        footer h4, footer h5 {
+            color: #ff4400;
+        }
+        
+        footer h4,h5{
+            color:#ff4400;
+        }
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+        }
+        
+        .brand-section {
+            text-align: center;
+            padding: 30px;
+            margin: 40px 0;
+            background: rgba(255, 68, 0, 0.05);
+            border-radius: 15px;
+        }
+        
+        .hindi-content {
+            display: none;
+        }
+        
+        .disclaimer-item {
+            margin-bottom: 15px;
+            padding-left: 10px;
+            border-left: 3px solid var(--primary-color);
+        }
+        
+        .warning-card {
+            background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+            border-left: 5px solid #ffc107;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .language-toggle {
+                position: static;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            
+            .content-card {
+                padding: 25px;
+            }
+        }
+        
+        /* Scroll Animation Styles */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .scroll-animate.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-graduation-cap"></i>
+                <span>BTEUP</span> <span>HUB</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="fas fa-home"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="diploma/syllabus.html">
+                            <i class="fas fa-user-graduate"></i> Diploma
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pg-diploma/syllabus.html">
+                            <i class="fas fa-graduation-cap"></i> PG Diploma
+                        </a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="about us page.html">
+                            <i class="fas fa-info-circle"></i> About
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contribution-page.html">
+                            <i class="fas fa-hands-helping"></i> Contribute
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">
+                            <i class="fas fa-envelope"></i> Contact
+                        </a>
+                    </li>                                         
+
+                    <!-- WhatsApp Button -->
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Language Toggle -->
+    <div class="language-toggle">
+        <button id="languageToggle" class="language-btn">
+            <i class="fas fa-language me-2"></i>English
+        </button>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold">Disclaimer</h1>
+            <p class="lead">Important Legal Information</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Introduction Card -->
+        <div class="content-card scroll-animate">
+            <div class="text-center mb-4">
+                <div class="disclaimer-icon">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <h2>Important Legal Notice</h2>
+            </div>
+            <p class="text-center">Welcome to <strong>BTEUP HUB</strong>. The content provided on this website, including <strong>previous question papers</strong>, <strong>project synopses</strong>, and <strong>educational materials</strong>, is intended solely for informational and academic purposes.</p>
+            
+            <div class="warning-card">
+                <div class="d-flex align-items-center">
+                    <i class="fas fa-exclamation-circle fa-2x text-warning me-3"></i>
+                    <div>
+                        <h5 class="mb-1">Important Notice</h5>
+                        <p class="mb-0">Please read this disclaimer carefully before using our website and resources.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Disclaimer Sections -->
+        <div class="content-card">
+            <!-- Section 1 -->
+            <div class="disclaimer-section scroll-animate">
+                <div class="d-flex align-items-center mb-3">
+                    <div class="disclaimer-icon me-3">
+                        <i class="fas fa-unlink"></i>
+                    </div>
+                    <h3>No Official Affiliation</h3>
+                </div>
+                <div class="disclaimer-item">
+                    <p>This website is <strong>not affiliated</strong> with any official education board, university, or government entity. The materials available here are sourced from public records or user contributions and are provided as-is.</p>
+                </div>
+            </div>
+
+            <!-- Section 2 -->
+            <div class="disclaimer-section scroll-animate">
+                <div class="d-flex align-items-center mb-3">
+                    <div class="disclaimer-icon me-3">
+                        <i class="fas fa-copyright"></i>
+                    </div>
+                    <h3>Copyright & Fair Use</h3>
+                </div>
+                <div class="disclaimer-item">
+                    <p>All resources, such as previous papers and project materials, are shared under the assumption of <strong>fair use for educational purposes</strong>. If you believe any content infringes on copyright laws, please reach out to us, and we will address it promptly.</p>
+                </div>
+            </div>
+
+            <!-- Section 3 -->
+            <div class="disclaimer-section scroll-animate">
+                <div class="d-flex align-items-center mb-3">
+                    <div class="disclaimer-icon me-3">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>No Legal Responsibility</h3>
+                </div>
+                <div class="disclaimer-item">
+                    <p>BTEUP HUB does not claim ownership of the provided materials. We do not guarantee the accuracy, completeness, or relevance of the content. Users are encouraged to independently verify information before use.</p>
+                </div>
+            </div>
+
+            <!-- Section 4 -->
+            <div class="disclaimer-section scroll-animate">
+                <div class="d-flex align-items-center mb-3">
+                    <div class="disclaimer-icon me-3">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <h3>User Responsibility</h3>
+                </div>
+                <div class="disclaimer-item">
+                    <p>Users uploading content (e.g., papers, ebooks, or projects) are solely responsible for ensuring they have the right to share such materials. BTEUP HUB is not liable for any legal consequences arising from user-submitted content.</p>
+                </div>
+            </div>
+
+            <!-- Section 5 -->
+            <div class="disclaimer-section scroll-animate">
+                <div class="d-flex align-items-center mb-3">
+                    <div class="disclaimer-icon me-3">
+                        <i class="fas fa-external-link-alt"></i>
+                    </div>
+                    <h3>Third-Party Links</h3>
+                </div>
+                <div class="disclaimer-item">
+                    <p>This website may contain links to third-party sites or resources. BTEUP HUB is not responsible for the content, availability, or privacy practices of these external sites. Accessing them is at your own risk.</p>
+                </div>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="disclaimer-section text-center scroll-animate">
+                <div class="d-flex align-items-center justify-content-center mb-3">
+                    <div class="disclaimer-icon me-3">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Contact Us</h3>
+                </div>
+                <p>For concerns about content ownership or legal matters, please contact us. We are dedicated to addressing issues responsibly and efficiently.</p>
+                <a href="contact.html" class="btn gradient-btn mt-3">
+                    <i class="fas fa-envelope me-2"></i>Contact Us
+                </a>
+            </div>
+        </div>
+
+        <!-- Brand Section -->
+        <div class="brand-section scroll-animate">
+            <h3>BTEUP HUB</h3>
+            <p class="lead">"Empowering students with knowledge and resources for a brighter future."</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <!-- Brand Info -->
+                <div class="col-lg-4 mb-4">
+                    <h4 class="mb-3"> <i class="fas fa-graduation-cap"></i>BTEUP HUB</h4>
+                    <p class="mb-4">"Your complete resource hub for Diploma & PG Diploma studies. Providing quality education materials since 2024 - Technical education notes download."</p>
+                </div>
+                
+                <!-- Diploma Resources -->
+                <div class="col-lg-4 mb-4">
+                    <h5 class="mb-3">Diploma Resources</h5>
+                    <div class="footer-links">
+                        <div class="row">
+                            <div class="col-6">
+                                <p><a href="diploma/syllabus.html">Syllabus</a></p>
+                                <p><a href="diploma/pyq.html">PYQ</a></p>
+                                <p><a href="diploma/notes.html">Notes</a></p>
+                            </div>
+                            <div class="col-6">
+                                <p><a href="diploma/book.html">Books</a></p>
+                                <p><a href="diploma/project.html">Projects</a></p>
+                                <p><a href="/">Lab Manuals</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- PG Diploma Resources -->
+                <div class="col-lg-4 mb-4">
+                    <h5 class="mb-3">PG Diploma Resources</h5>
+                    <div class="footer-links">
+                        <div class="row">
+                            <div class="col-6">
+                                <p><a href="pg-diploma/syllabus.html">Syllabus</a></p>
+                                <p><a href="pg-diploma/pyq.html">PYQ</a></p>
+                                <p><a href="pg-diploma/notes.html">Notes</a></p>
+                            </div>
+                            <div class="col-6">
+                                <p><a href="pg-diploma/book.html">Books</a></p>
+                                <p><a href="pg-diploma/project.html">Projects</a></p>
+                                <p><a href="/">Lab Manuals</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="copyright text-center">
+                <div class="row">
+                    <div class="col-md-6 text-md-start">
+                         <p><a href="privacy-policy.html" style="color: #e9ecef; text-decoration: none; ">Privacy Policy</a>  | <a href="disclaimer.html" style="color: #e9ecef; text-decoration: none;">Disclaimer</a></p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <p>© 2025 BTEUP HUB. All rights reserved.</p>
+                        <p>Powered by : <span style="color: #ff4400; font-weight: 800;"> HARIOM MAURYA</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script>
+        // Language Toggle Functionality
+        document.getElementById('languageToggle').addEventListener('click', function() {
+            const isEnglish = this.innerHTML.includes('English');
+            const hindiContent = document.querySelectorAll('.hindi-content');
+            const englishContent = document.querySelectorAll('.english-content');
+            
+            if (isEnglish) {
+                // Switch to Hindi
+                this.innerHTML = '<i class="fas fa-language me-2"></i>हिंदी';
+                englishContent.forEach(el => el.style.display = 'none');
+                hindiContent.forEach(el => el.style.display = 'block');
+            } else {
+                // Switch to English
+                this.innerHTML = '<i class="fas fa-language me-2"></i>English';
+                hindiContent.forEach(el => el.style.display = 'none');
+                englishContent.forEach(el => el.style.display = 'block');
+            }
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                document.querySelector('.navbar').classList.add('navbar-scrolled');
+            } else {
+                document.querySelector('.navbar').classList.remove('navbar-scrolled');
+            }
+        });
+
+        // Scroll Animation with Intersection Observer
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.scroll-animate');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                    }
+                });
+            }, { 
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+            
+            animatedElements.forEach(el => {
+                observer.observe(el);
+            });
+            
+        });
+    </script>
+</body>
+</html>

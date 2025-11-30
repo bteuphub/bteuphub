@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - BTEUP HUB</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #ff4400;
+            --primary-light: #ff6a33;
+            --primary-dark: #cc3600;
+            --secondary-color: #000000;
+            --light-color: #f8f9fa;
+            --dark-color: #1a1a1a;
+            --text-light: #f5f5f5;
+            --text-dark: #333333;
+            --card-bg: #ffffff;
+            --section-bg: #f8f9fa;
+            --footer-bg: #000000;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-dark);
+            background-color: #f9fafb;
+            overflow-x: hidden;
+        }
+        
+
+        
+        /* Navbar */
+        .navbar {
+            background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(248, 249, 250, 1) 100%);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            padding: 15px 0;
+            transition: all 0.3s ease;
+            position: sticky;
+            top: 0;
+            z-index: 1020;
+            width: 100%;
+        }
+        
+        .navbar-scrolled {
+            padding: 10px 0;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(240, 240, 240, 1) 100%) !important;
+            backdrop-filter: blur(10px);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            white-space: nowrap;
+        }
+        
+        .navbar-brand i {
+            font-size: 1.8rem;
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+        
+        .navbar-brand span:first-child {
+            color: var(--primary-color);
+            font-weight: 800;
+        }
+        
+        .navbar-brand span:last-child {
+            color: var(--primary-dark);
+            font-weight: 700;
+        }
+        
+        .navbar-nav {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            overflow-x: auto;
+            white-space: nowrap;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        .navbar-nav::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .navbar-nav .nav-link {
+            color: #343a40 !important;
+            font-weight: 500;
+            padding: 8px 12px !important;
+            margin: 0 3px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+        
+        .navbar-nav .nav-link i {
+            margin-right: 6px;
+            width: 18px;
+            text-align: center;
+            font-size: 1rem;
+            color: var(--dark-color);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            color: var(--primary-color) !important;
+            background-color: rgba(255, 68, 0, 0.1);
+        }
+        
+        .navbar-nav .nav-link:hover i {
+            transform: scale(1.1);
+            color: var(--primary-light);
+        }
+        
+        .navbar-nav .nav-link.active {
+            color: var(--primary-color) !important;
+            background: rgba(255, 68, 0, 0.1);
+            font-weight: 600;
+        }
+        
+        .navbar-nav .nav-link.active i {
+            color: var(--primary-color);
+        }
+        
+        .btn-whatsapp-join {
+            background: linear-gradient(135deg, #00c951, #00a843);
+            border: none;
+            color: white;
+            padding: 6px 15px;
+            font-weight: 600;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            margin-left: 10px;
+            font-size: 0.85rem;
+            white-space: nowrap;
+            box-shadow: 0 5px 15px rgba(0, 201, 81, 0.4);
+        }
+        
+        .btn-whatsapp-join:hover {
+            background: linear-gradient(135deg, #00a843, #008c35);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 168, 67, 0.5);
+        }
+        
+        /* Mobile view में भी single line रखने के लिए */
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                overflow-x: auto;
+            }
+            
+            .navbar-nav {
+                flex-direction: row;
+                width: max-content;
+            }
+            
+            .navbar-nav .nav-link {
+                padding: 10px 12px !important;
+            }
+            
+            .navbar-nav .btn-whatsapp-join {
+                margin-left: 10px;
+                margin-top: 0;
+                width: auto;
+            }
+        }
+        
+        .navbar-collapse {
+            flex-grow: 0;
+        }
+        
+        /* PRIVACY POLICY PAGE SPECIFIC STYLES */
+        .page-header {
+            background: linear-gradient(90deg, var(--primary-dark), var(--primary-color));
+            color: white;
+            padding: 100px 0 50px;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="%23ffffff" opacity="0.1"><polygon points="1000,0 1000,100 0,100"></polygon></svg>');
+            background-size: cover;
+        }
+        
+        .content-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            padding: 40px;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+        }
+        
+        .content-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+        
+        .policy-section {
+            margin-bottom: 40px;
+        }
+        
+        .policy-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            display: inline-block;
+            padding: 15px;
+            border-radius: 50%;
+            background: rgba(255, 68, 0, 0.1);
+        }
+        
+        .gradient-btn {
+            background: linear-gradient(90deg, var(--primary-dark), var(--primary-color));
+            border: none;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 68, 0, 0.4);
+        }
+        
+        .gradient-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 68, 0, 0.5);
+            color: white;
+        }
+        
+        .accent-btn {
+            background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+            border: none;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+        }
+        
+        .accent-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
+            color: white;
+        }
+        
+        .language-toggle {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            z-index: 1000;
+        }
+        
+        .language-btn {
+            background: white;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .language-btn:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        footer {
+            background: var(--footer-bg);
+            color: white;
+            padding: 60px 0 20px;
+            margin-top: 60px;
+        }
+        
+        footer h4, footer h5 {
+            color: #ff4400;
+        }
+        
+        footer h4,h5{
+            color:#ff4400;
+        }
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+        }
+        
+        .brand-section {
+            text-align: center;
+            padding: 30px;
+            margin: 40px 0;
+            background: rgba(255, 68, 0, 0.05);
+            border-radius: 15px;
+        }
+        
+        .hindi-content {
+            display: none;
+        }
+        
+        .policy-item {
+            margin-bottom: 15px;
+            padding-left: 10px;
+            border-left: 3px solid var(--primary-color);
+        }
+        
+        @media (max-width: 768px) {
+            .language-toggle {
+                position: static;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            
+            .content-card {
+                padding: 25px;
+            }
+        }
+        
+        /* Scroll Animation Styles */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .scroll-animate.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-graduation-cap"></i>
+                <span>BTEUP</span> <span>HUB</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="fas fa-home"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="diploma/syllabus.html">
+                            <i class="fas fa-user-graduate"></i> Diploma
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pg-diploma/syllabus.html">
+                            <i class="fas fa-graduation-cap"></i> PG Diploma
+                        </a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="about us page.html">
+                            <i class="fas fa-info-circle"></i> About
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contribution-page.html">
+                            <i class="fas fa-hands-helping"></i> Contribute
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">
+                            <i class="fas fa-envelope"></i> Contact
+                        </a>
+                    </li>                                         
+
+                    <!-- WhatsApp Button -->
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Language Toggle -->
+    <div class="language-toggle">
+        <button id="languageToggle" class="language-btn">
+            <i class="fas fa-language me-2"></i>English
+        </button>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold english-content">Privacy Policy</h1>
+            <h1 class="display-4 fw-bold hindi-content" style="display: none;">गोपनीयता नीति</h1>
+            <p class="lead english-content">Last updated: March 20, 2025</p>
+            <p class="lead hindi-content" style="display: none;">अंतिम अपडेट: 20 मार्च, 2025</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Introduction Card -->
+        <div class="content-card scroll-animate">
+            <div class="text-center mb-4">
+                <div class="policy-icon">
+                    <i class="fas fa-user-shield"></i>
+                </div>
+                <h2 class="english-content">Your Privacy Matters</h2>
+                <h2 class="hindi-content" style="display: none;">आपकी गोपनीयता महत्वपूर्ण है</h2>
+            </div>
+            <p class="text-center english-content">At <strong>BTEUP HUB</strong>, we value your privacy. This Privacy Policy explains how we collect, use, and protect your personal information when you use our website, including features like previous papers, ebooks, projects, and user uploads.</p>
+            <p class="text-center hindi-content" style="display: none;"><strong>BTEUP HUB</strong> पर, हम आपकी गोपनीयता को महत्व देते हैं। यह गोपनीयता नीति बताती है कि हम आपकी व्यक्तिगत जानकारी को कैसे एकत्र करते हैं, उपयोग करते हैं और सुरक्षित रखते हैं जब आप हमारी वेबसाइट का उपयोग करते हैं, जिसमें पिछले पेपर, ईबुक, प्रोजेक्ट और उपयोगकर्ता अपलोड जैसी सुविधाएं शामिल हैं।</p>
+        </div>
+
+        <!-- Policy Sections -->
+        <div class="content-card">
+            <!-- Section 1 -->
+            <div class="policy-section scroll-animate">
+                <div class="d-flex align-items-center mb-3">
+                    <div class="policy-icon me-3">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 class="english-content">Information We Collect</h3>
+                    <h3 class="hindi-content" style="display: none;">जानकारी जो हम एकत्र करते हैं</h3>
+                </div>
+                <p class="english-content">We may collect the following types of information:</p>
+                <p class="hindi-content" style="display: none;">हम निम्नलिखित प्रकार की जानकारी एकत्र कर सकते हैं:</p>
+                <div class="policy-item">
+                    <h5 class="english-content"><i class="fas fa-user me-2 text-primary"></i>Personal Information</h5>
+                    <h5 class="hindi-content" style="display: none;"><i class="fas fa-user me-2 text-primary"></i>व्यक्तिगत जानकारी</h5>
+                    <p class="english-content">Name, email address, and login credentials when you create an account or contact us.</p>
+                    <p class="hindi-content" style="display: none;">नाम, ईमेल पता और लॉगिन क्रेडेंशियल जब आप खाता बनाते हैं या हमसे संपर्क करते हैं।</p>
+                </div>
+                <div class="policy-item">
+                    <h5 class="english-content"><i class="fas fa-file-upload me-2 text-primary"></i>User-Submitted Content</h5>
+                    <h5 class="hindi-content" style="display: none;"><i class="fas fa-file-upload me-2 text-primary"></i>उपयोगकर्ता द्वारा प्रस्तुत सामग्री</h5>
+                    <p class="english-content">Files (e.g., papers, ebooks, project synopses) you upload to our platform, which may be stored on Google Drive.</p>
+                    <p class="hindi-content" style="display: none;">फाइलें (जैसे पेपर, ईबुक, प्रोजेक्ट सारांश) जो आप हमारे प्लेटफॉर्म पर अपलोड करते हैं, जो Google Drive पर संग्रहीत हो सकती हैं।</p>
+                </div>
+                <div class="policy-item">
+                    <h5 class="english-content"><i class="fas fa-chart-line me-2 text-primary"></i>Usage Data</h5>
+                    <h5 class="hindi-content" style="display: none;"><i class="fas fa-chart-line me-2 text-primary"></i>उपयोग डेटा</h5>
+                    <p class="english-content">Information about how you interact with our website, such as IP address, browser type, and pages visited, collected via cookies or analytics tools.</p>
+                    <p class="hindi-content" style="display: none;">जानकारी कि आप हमारी वेबसाइट के साथ कैसे इंटरैक्ट करते हैं, जैसे आईपी पता, ब्राउज़र प्रकार और देखे गए पृष्ठ, कुकीज़ या एनालिटिक्स टूल के माध्यम से एकत्र किए गए।</p>
+                </div>
+            </div>
+
+            <!-- Section 2 -->
+            <div class="policy-section scroll-animate">
+                <div class="d-flex align-items-center mb-3">
+                    <div class="policy-icon me-3">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 class="english-content">How We Use Your Information</h3>
+                    <h3 class="hindi-content" style="display: none;">हम आपकी जानकारी का उपयोग कैसे करते हैं</h3>
+                </div>
+                <p class="english-content">We use your information to:</p>
+                <p class="hindi-content" style="display: none;">हम आपकी जानकारी का उपयोग करते हैं:</p>
+                
+                <div class="english-content">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex align-items-center">
+                            <i class="fas fa-check-circle text-success me-3"></i>
+                            Provide and improve our services, such as enabling file uploads and content access.
+                        </li>
+                        <li class="list-group-item d-flex align-items-center">
+                            <i class="fas fa-check-circle text-success me-3"></i>
+                            Authenticate users and manage accounts.
+                        </li>
+                        <li class="list-group-item d-flex align-items-center">
+                            <i class="fas fa-check-circle text-success me-3"></i>
+                            Respond to inquiries or support requests.
+                        </li>
+                        <li class="list-group-item d-flex align-items-center">
+                            <i class="fas fa-check-circle text-success me-3"></i>
+                            Analyze website usage to enhance user experience.
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="hindi-content" style="display: none;">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex align-items-center">
+                            <i class="fas fa-check-circle text-success me-3"></i>
+                            हमारी सेवाएं प्रदान करने और सुधारने के लिए, जैसे फ़ाइल अपलोड और सामग्री पहुंच सक्षम करना।
+                        </li>
+                        <li class="list-group-item d-flex align-items-center">
+                            <i class="fas fa-check-circle text-success me-3"></i>
+                            उपयोगकर्ताओं को प्रमाणित करने और खातों का प्रबंधन करने के लिए।
+                        </li>
+                        <li class="list-group-item d-flex align-items-center">
+                            <i class="fas fa-check-circle text-success me-3"></i>
+                            पूछताछ या सहायता अनुरोधों का जवाब देने के लिए।
+                        </li>
+                        <li class="list-group-item d-flex align-items-center">
+                            <i class="fas fa-check-circle text-success me-3"></i>
+                            उपयोगकर्ता अनुभव को बेहतर बनाने के लिए वेबसाइट उपयोग का विश्लेषण करने के लिए।
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Section 3 -->
+            <div class="policy-section scroll-animate">
+                <div class="d-flex align-items-center mb-3">
+                    <div class="policy-icon me-3">
+                        <i class="fas fa-share-alt"></i>
+                    </div>
+                    <h3 class="english-content">Information Sharing</h3>
+                    <h3 class="hindi-content" style="display: none;">जानकारी साझा करना</h3>
+                </div>
+                <p class="english-content">We do not sell or rent your personal information. We may share it with:</p>
+                <p class="hindi-content" style="display: none;">हम आपकी व्यक्तिगत जानकारी को बेचते या किराए पर नहीं देते हैं। हम इसे साझा कर सकते हैं:</p>
+                
+                <div class="english-content">
+                    <div class="alert alert-primary d-flex align-items-center" role="alert">
+                        <i class="fas fa-info-circle me-3 fs-4"></i>
+                        <div>
+                            <strong>Service Providers:</strong> Third-party services like Google Drive for file storage or analytics tools, bound by confidentiality agreements.
+                        </div>
+                    </div>
+                    <div class="alert alert-warning d-flex align-items-center" role="alert">
+                        <i class="fas fa-exclamation-triangle me-3 fs-4"></i>
+                        <div>
+                            <strong>Legal Obligations:</strong> If required by law or to protect our rights and users.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hindi-content" style="display: none;">
+                    <div class="alert alert-primary d-flex align-items-center" role="alert">
+                        <i class="fas fa-info-circle me-3 fs-4"></i>
+                        <div>
+                            <strong>सेवा प्रदाता:</strong> तृतीय-पक्ष सेवाएं जैसे फ़ाइल संग्रहण के लिए Google Drive या एनालिटिक्स टूल, गोपनीयता समझौतों से बंधे हुए।
+                        </div>
+                    </div>
+                    <div class="alert alert-warning d-flex align-items-center" role="alert">
+                        <i class="fas fa-exclamation-triangle me-3 fs-4"></i>
+                        <div>
+                            <strong>कानूनी दायित्व:</strong> यदि कानून द्वारा आवश्यक हो या हमारे अधिकारों और उपयोगकर्ताओं की रक्षा के लिए।
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 4 -->
+            <div class="policy-section scroll-animate">
+                <div class="d-flex align-items-center mb-3">
+                    <div class="policy-icon me-3">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="english-content">Data Security</h3>
+                    <h3 class="hindi-content" style="display: none;">डेटा सुरक्षा</h3>
+                </div>
+                <p class="english-content">We implement appropriate security measures to protect your personal information from unauthorized access, alteration, or disclosure. However, no method of transmission over the internet is 100% secure.</p>
+                <p class="hindi-content" style="display: none;">हम आपकी व्यक्तिगत जानकारी को अनधिकृत पहुंच, परिवर्तन या प्रकटीकरण से बचाने के लिए उपयुक्त सुरक्षा उपाय लागू करते हैं। हालांकि, इंटरनेट पर संचरण की कोई भी विधि 100% सुरक्षित नहीं है।</p>
+            </div>
+
+            <!-- Section 5 -->
+            <div class="policy-section scroll-animate">
+                <div class="d-flex align-items-center mb-3">
+                    <div class="policy-icon me-3">
+                        <i class="fas fa-cookie"></i>
+                    </div>
+                    <h3 class="english-content">Cookies & Tracking</h3>
+                    <h3 class="hindi-content" style="display: none;">कुकीज़ और ट्रैकिंग</h3>
+                </div>
+                <p class="english-content">We use cookies and similar tracking technologies to enhance your experience on our website. You can control cookie settings through your browser preferences.</p>
+                <p class="hindi-content" style="display: none;">हम आपके अनुभव को बेहतर बनाने के लिए कुकीज़ और समान ट्रैकिंग तकनीकों का उपयोग करते हैं। आप अपने ब्राउज़र वरीयताओं के माध्यम से कुकी सेटिंग्स को नियंत्रित कर सकते हैं।</p>
+            </div>
+
+            <!-- Section 6 -->
+            <div class="policy-section scroll-animate">
+                <div class="d-flex align-items-center mb-3">
+                    <div class="policy-icon me-3">
+                        <i class="fas fa-user-edit"></i>
+                    </div>
+                    <h3 class="english-content">Your Rights</h3>
+                    <h3 class="hindi-content" style="display: none;">आपके अधिकार</h3>
+                </div>
+                <p class="english-content">You have the right to access, correct, or delete your personal information. You can also object to processing or request data portability. Contact us to exercise these rights.</p>
+                <p class="hindi-content" style="display: none;">आपको अपनी व्यक्तिगत जानकारी तक पहुंचने, सही करने या हटाने का अधिकार है। आप प्रसंस्करण का विरोध भी कर सकते हैं या डेटा पोर्टेबिलिटी का अनुरोध कर सकते हैं। इन अधिकारों का प्रयोग करने के लिए हमसे संपर्क करें।</p>
+            </div>
+
+            <!-- Section 7 -->
+            <div class="policy-section scroll-animate">
+                <div class="d-flex align-items-center mb-3">
+                    <div class="policy-icon me-3">
+                        <i class="fas fa-external-link-alt"></i>
+                    </div>
+                    <h3 class="english-content">Third-Party Links</h3>
+                    <h3 class="hindi-content" style="display: none;">तीसरे पक्ष के लिंक</h3>
+                </div>
+                <p class="english-content">Our website may contain links to third-party sites. We are not responsible for the privacy practices or content of these external sites.</p>
+                <p class="hindi-content" style="display: none;">हमारी वेबसाइट में तीसरे पक्ष की साइटों के लिंक हो सकते हैं। हम इन बाहरी साइटों की गोपनीयता प्रथाओं या सामग्री के लिए जिम्मेदार नहीं हैं।</p>
+            </div>
+
+            <!-- Section 8 -->
+            <div class="policy-section scroll-animate">
+                <div class="d-flex align-items-center mb-3">
+                    <div class="policy-icon me-3">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3 class="english-content">Policy Updates</h3>
+                    <h3 class="hindi-content" style="display: none;">नीति अपडेट</h3>
+                </div>
+                <p class="english-content">We may update this Privacy Policy periodically. We will notify you of any significant changes by posting the new policy on this page.</p>
+                <p class="hindi-content" style="display: none;">हम इस गोपनीयता नीति को समय-समय पर अपडेट कर सकते हैं। हम इस पृष्ठ पर नई नीति पोस्ट करके आपको किसी भी महत्वपूर्ण परिवर्तन के बारे में सूचित करेंगे।</p>
+            </div>
+            
+            <!-- Contact Section -->
+            <div class="policy-section text-center scroll-animate">
+                <div class="d-flex align-items-center justify-content-center mb-3">
+                    <div class="policy-icon me-3">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="english-content">Contact Us</h3>
+                    <h3 class="hindi-content" style="display: none;">हमसे संपर्क करें</h3>
+                </div>
+                <p class="english-content">For questions or concerns about this Privacy Policy, please contact us.</p>
+                <p class="hindi-content" style="display: none;">इस गोपनीयता नीति के बारे में प्रश्न या चिंताओं के लिए, कृपया हमसे संपर्क करें।</p>
+                <a href="contact.html" class="btn gradient-btn mt-3">
+                    <i class="fas fa-envelope me-2"></i><span class="english-content">Contact Us</span><span class="hindi-content" style="display: none;">हमसे संपर्क करें</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Brand Section -->
+        <div class="brand-section scroll-animate">
+            <h3 class="english-content"><i class="fas fa-graduation-cap"></i>BTEUP HUB</h3>
+            <h3 class="hindi-content" style="display: none;"><i class="fas fa-graduation-cap" ></i>BTEUP HUB</h3>
+            <p class="lead english-content" style="color: red;font-weight: 700;">"Empowering students with knowledge and resources for a brighter future."</p>
+            <p class="lead hindi-content" style="display: none;" style="color: red; font-weight: 700;">"एक उज्जवल भविष्य के लिए ज्ञान और संसाधनों के साथ छात्रों को सशक्त बनाना।"</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <!-- Brand Info -->
+                <div class="col-lg-4 mb-4">
+                    <h4 class="mb-3"> <i class="fas fa-graduation-cap"></i>BTEUP HUB</h4>
+                    <p class="mb-4">"Your complete resource hub for Diploma & PG Diploma studies. Providing quality education materials since 2024 - Technical education notes download."</p>
+                </div>
+                
+                <!-- Diploma Resources -->
+                <div class="col-lg-4 mb-4">
+                    <h5 class="mb-3">Diploma Resources</h5>
+                    <div class="footer-links">
+                        <div class="row">
+                            <div class="col-6">
+                                <p><a href="diploma/syllabus.html">Syllabus</a></p>
+                                <p><a href="diploma/pyq.html">PYQ</a></p>
+                                <p><a href="diploma/notes.html">Notes</a></p>
+                            </div>
+                            <div class="col-6">
+                                <p><a href="diploma/book.html">Books</a></p>
+                                <p><a href="diploma/project.html">Projects</a></p>
+                                <p><a href="/">Lab Manuals</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- PG Diploma Resources -->
+                <div class="col-lg-4 mb-4">
+                    <h5 class="mb-3">PG Diploma Resources</h5>
+                    <div class="footer-links">
+                        <div class="row">
+                            <div class="col-6">
+                                <p><a href="pg-diploma/syllabus.html">Syllabus</a></p>
+                                <p><a href="pg-diploma/pyq.html">PYQ</a></p>
+                                <p><a href="pg-diploma/notes.html">Notes</a></p>
+                            </div>
+                            <div class="col-6">
+                                <p><a href="pg-diploma/book.html">Books</a></p>
+                                <p><a href="pg-diploma/project.html">Projects</a></p>
+                                <p><a href="/">Lab Manuals</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="copyright text-center">
+                <div class="row">
+                    <div class="col-md-6 text-md-start">
+                         <p><a href="privacy-policy.html" style="color: #e9ecef; text-decoration: none; ">Privacy Policy</a>  | <a href="disclaimer.html" style="color: #e9ecef; text-decoration: none;">Disclaimer</a></p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <p>© 2025 BTEUP HUB. All rights reserved.</p>
+                        <p>Powered by : <span style="color: #ff4400; font-weight: 800;"> HARIOM MAURYA</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script>
+        // Language Toggle Functionality
+        document.getElementById('languageToggle').addEventListener('click', function() {
+            const isEnglish = this.innerHTML.includes('English');
+            const hindiContent = document.querySelectorAll('.hindi-content');
+            const englishContent = document.querySelectorAll('.english-content');
+            
+            if (isEnglish) {
+                // Switch to Hindi
+                this.innerHTML = '<i class="fas fa-language me-2"></i>हिंदी';
+                englishContent.forEach(el => el.style.display = 'none');
+                hindiContent.forEach(el => el.style.display = 'block');
+            } else {
+                // Switch to English
+                this.innerHTML = '<i class="fas fa-language me-2"></i>English';
+                hindiContent.forEach(el => el.style.display = 'none');
+                englishContent.forEach(el => el.style.display = 'block');
+            }
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                document.querySelector('.navbar').classList.add('navbar-scrolled');
+            } else {
+                document.querySelector('.navbar').classList.remove('navbar-scrolled');
+            }
+        });
+
+        // Scroll Animation with Intersection Observer
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.scroll-animate');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                    }
+                });
+            }, { 
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+            
+            animatedElements.forEach(el => {
+                observer.observe(el);
+            });
+            
+            
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BTEUP HUB - Free Diploma & PG Diploma Notes, Books, PYQ, Syllabus & Projects (All Branches)</title>
+    <meta name="description" content="Download free Diploma and PG Diploma Notes, eBooks, Syllabus, Previous Year Question Papers (PYQ), Projects, and Lab Manuals for all branches and semesters. Students can also contribute study material to help others succeed.">
+    <meta name="keywords" content="BTEUP notes, BTEUP syllabus, BTEUP books free download, BTEUP pyq semester wise, Diploma notes all branches, PG Diploma notes and study material, Polytechnic notes PDF, Mechanical Engineering notes PDF, Computer Science & Engineering notes semester 1, Electrical Engineering book PDF, Mechanical Engineering PYQ, Chemical Engineering notes free, Civil Engineering diploma syllabus, CSE diploma notes PDF, Diploma study material free, Polytechnic all branch notes, Semester wise polytechnic notes, Diploma engineering ebooks, Best website for diploma students, Technical education notes download, UPBTE notes 2025, UP polytechnic pyq download, Diploma project PDF free, Branch wise diploma resources">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #ff4400;
+            --primary-light: #ff6a33;
+            --primary-dark: #cc3600;
+            --secondary-color: #000000;
+            --light-color: #f8f9fa;
+            --dark-color: #1a1a1a;
+            --text-light: #f5f5f5;
+            --text-dark: #333333;
+            --card-bg: #ffffff;
+            --section-bg: #f8f9fa;
+            --footer-bg: #000000;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-dark);
+            overflow-x: hidden;
+            background-color: #f9fafb;
+            padding-top: 0 !important;
+        }
+        
+        /* Progress Line */
+        .progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: transparent;
+            z-index: 1030;
+        }
+        
+        .progress-bar {
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-dark), var(--primary-color));
+            width: 0%;
+            transition: width 0.3s ease;
+            box-shadow: 0 0 10px rgba(255, 68, 0, 0.5);
+        }
+        
+        /* Navbar - FIXED SOLUTION */
+        .navbar {
+            background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(248, 249, 250, 1) 100%);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            padding: 15px 0;
+            transition: all 0.3s ease;
+            position: sticky;
+            top: 0;
+            z-index: 1020;
+            width: 100%;
+        }
+        
+        .navbar-scrolled {
+            padding: 10px 0;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(240, 240, 240, 1) 100%) !important;
+            backdrop-filter: blur(10px);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            white-space: nowrap;
+        }
+        
+        .navbar-brand i {
+            font-size: 1.8rem;
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+        
+        .navbar-brand span:first-child {
+            color: var(--primary-color);
+            font-weight: 800;
+        }
+        
+        .navbar-brand span:last-child {
+            color: var(--primary-dark);
+            font-weight: 700;
+        }
+        
+        .navbar-nav {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            overflow-x: auto;
+            white-space: nowrap;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        .navbar-nav::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .navbar-nav .nav-link {
+            color: #343a40 !important;
+            font-weight: 500;
+            padding: 8px 12px !important;
+            margin: 0 3px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+        
+        .navbar-nav .nav-link i {
+            margin-right: 6px;
+            width: 18px;
+            text-align: center;
+            font-size: 1rem;
+            color: var(--dark-color);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            color: var(--primary-color) !important;
+            background-color: rgba(255, 68, 0, 0.1);
+        }
+        
+        .navbar-nav .nav-link:hover i {
+            transform: scale(1.1);
+            color: var(--primary-light);
+        }
+        
+        .navbar-nav .nav-link.active {
+            color: var(--primary-color) !important;
+            background: rgba(255, 68, 0, 0.1);
+            font-weight: 600;
+        }
+        
+        .navbar-nav .nav-link.active i {
+            color: var(--primary-color);
+        }
+        
+        .btn-whatsapp-join {
+            background: linear-gradient(135deg, #00c951, #00a843);
+            border: none;
+            color: white;
+            padding: 6px 15px;
+            font-weight: 600;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            margin-left: 10px;
+            font-size: 0.85rem;
+            white-space: nowrap;
+            box-shadow: 0 5px 15px rgba(0, 201, 81, 0.4);
+        }
+        
+        .btn-whatsapp-join:hover {
+            background: linear-gradient(135deg, #00a843, #008c35);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 168, 67, 0.5);
+        }
+        
+        .btn-contribute {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            border: none;
+            color: white;
+            padding: 10px 25px;
+            font-weight: 600;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            white-space: nowrap;
+            box-shadow: 0 5px 15px rgba(255, 68, 0, 0.4);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px auto;
+        }
+        
+        .btn-contribute:hover {
+            background: linear-gradient(135deg, var(--primary-dark), #a32b00);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(204, 54, 0, 0.5);
+            color: white;
+        }
+        
+        /* Mobile view में भी single line रखने के लिए */
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                overflow-x: auto;
+            }
+            
+            .navbar-nav {
+                flex-direction: row;
+                width: max-content;
+            }
+            
+            .navbar-nav .nav-link {
+                padding: 10px 12px !important;
+            }
+            
+            .navbar-nav .btn-whatsapp-join {
+                margin-left: 10px;
+                margin-top: 0;
+                width: auto;
+            }
+        }
+        
+        .navbar-collapse {
+            flex-grow: 0;
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            color: var(--primary-color);
+            background: white;
+            padding: 120px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #f2f3f5;
+            background-size: cover;
+            background-position: center bottom;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-section h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .hero-section p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            opacity: 0.9;
+        }
+        
+        /* Buttons */
+        .btn-diploma {
+            background: linear-gradient(90deg, var(--primary-dark), var(--primary-color));
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;            
+            box-shadow: 0 5px 15px rgba(255, 68, 0, 0.4);
+            border-radius: 10px;
+            display: block;
+            border: none;
+            padding: 12px 30px;
+            font-weight: 600;
+            margin: 0 10px;
+        }
+
+        .btn-diploma:hover {
+            background-position: right center;
+            color: #fff;
+            text-decoration: none;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 68, 0, 0.5);
+        }
+        
+        .btn-pg-diploma {
+            background: linear-gradient(90deg, var(--primary-color), var(--primary-dark));
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;            
+            box-shadow: 0 5px 15px rgba(255, 68, 0, 0.4);
+            border-radius: 10px;
+            display: block;
+            border: none;
+            padding: 12px 30px;
+            font-weight: 600;
+            margin: 0 10px;
+        }
+
+        .btn-pg-diploma:hover {
+            background-position: right center;
+            color: #fff;
+            text-decoration: none;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 68, 0, 0.5);
+        }
+        
+        /* Resources Section */
+        .resources-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .section-title p {
+            color: #6c757d;
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+        
+        .resource-card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            height: 100%;
+            overflow: hidden;
+            background: var(--card-bg);
+            position: relative;
+            border-top: 4px solid var(--primary-color);
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            border-top: 4px solid var(--primary-light);
+        }
+        
+        .resource-icon {
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            background: linear-gradient(90deg, var(--primary-dark), var(--primary-color));
+            color: white;
+        }
+        
+        .resource-content {
+            padding: 25px;
+        }
+        
+        .resource-content h3 {
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+            font-size: 1.5rem;
+        }
+        
+        .resource-content p {
+            color: #6c757d;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .resource-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .resource-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .resource-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .resource-list li i {
+            color: var(--primary-color);
+            margin-right: 10px;
+        }
+        
+        /* Contribution Section - REPLACED Top Contributors */
+        .contribution-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #ffffff, #f0f0f0);
+            text-align: center;
+        }
+        
+        /* Programs Section */
+        .programs-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #ffffff, #f0f0f0);
+        }
+        
+        .program-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            height: 100%;
+            border-top: 4px solid var(--primary-light);
+        }
+        
+        .program-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            border-top: 4px solid var(--primary-color);
+        }
+        
+        .program-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .program-card h3 {
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+        
+        .program-card p {
+            color: #6c757d;
+            margin-bottom: 20px;
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            padding: 80px 0 0;
+            background: linear-gradient(90deg, var(--primary-dark), var(--primary-color));
+            color: white;
+            margin-bottom: 0;
+        }
+        
+        .stats-section .stat-item {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .stats-section .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: white;
+        }
+        
+        .stats-section .stat-text {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(90deg, var(--primary-dark), var(--primary-color));
+            color: white;
+            padding: 0 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            margin-top: 0;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.1)" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,202.7C672,203,768,181,864,165.3C960,149,1056,139,1152,149.3C1248,160,1344,192,1392,208L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-position: center bottom;
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            padding-top: 100px;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            opacity: 0.9;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--footer-bg);
+            color: white;
+            padding: 70px 0 20px;
+        }
+        footer h4,h5{
+            color:#ff4400;
+        }
+        footer h4,h5{
+            color:#ff4400;
+        }
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+        }
+        
+        /* Scroll Animation Styles */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .scroll-animate.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .scroll-animate-left {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .scroll-animate-left.animated {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .scroll-animate-right {
+            opacity: 0;
+            transform: translateX(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .scroll-animate-right.animated {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .scroll-animate-scale {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .scroll-animate-scale.animated {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        /* Staggered animations for lists */
+        .resource-list li, .program-card li {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+        
+        .resource-card.animated .resource-list li,
+        .program-card.animated .resource-list li {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Delay for list items */
+        .resource-list li:nth-child(1) { transition-delay: 0.1s; }
+        .resource-list li:nth-child(2) { transition-delay: 0.2s; }
+        .resource-list li:nth-child(3) { transition-delay: 0.3s; }
+        .resource-list li:nth-child(4) { transition-delay: 0.4s; }
+        .resource-list li:nth-child(5) { transition-delay: 0.5s; }
+        .resource-list li:nth-child(6) { transition-delay: 0.6s; }
+        
+        /* Stats counter animation */
+        .stat-number {
+            transition: all 1s ease;
+        }
+        
+        /* Hero section animation */
+        .hero-content h1, .hero-content p, .hero-content .d-flex {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .hero-content.animated h1 {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .hero-content.animated p {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 0.2s;
+        }
+        
+        .hero-content.animated .d-flex {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 0.4s;
+        }
+
+        /* Remove gap between stats and cta sections */
+        .stats-section + .cta-section {
+            margin-top: 0 !important;
+        }
+        
+        /* Performance optimizations */
+        .resource-card, .program-card {
+            will-change: transform;
+        }
+        
+        .hero-section, .stats-section, .cta-section {
+            will-change: opacity;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .stats-section .stat-number {
+                font-size: 2.5rem;
+            }
+            
+            .stats-section .stat-text {
+                font-size: 1rem;
+            }
+            
+            .hero-section h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Progress Line -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Navigation - FIXED VERSION -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-graduation-cap"></i>
+                <span>BTEUP</span> <span>HUB</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/">
+                            <i class="fas fa-home"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="diploma/syllabus.html">
+                            <i class="fas fa-user-graduate"></i> Diploma
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pg-diploma/syllabus.html">
+                            <i class="fas fa-graduation-cap"></i> PG Diploma
+                        </a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="about us page.html">
+                            <i class="fas fa-info-circle"></i> About
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contribution-page.html">
+                            <i class="fas fa-hands-helping"></i> Contribute
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">
+                            <i class="fas fa-envelope"></i> Contact
+                        </a>
+                    </li>                                         
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="display-4 fw-bold mb-4"><span style="color: black;">BTEUP </span><span style="color: #ff4400;"> HUB</span> - <span style="color: #333;">Your Study Resource Hub</span></h1>
+                <p class="lead mb-5" style="color: #1a1a1a;">Access complete study materials for Diploma & PG Diploma programs - Books, Notes, PYQs, Syllabus, and more! Download free Diploma and PG Diploma Notes, eBooks, Syllabus, Previous Year Question Papers (PYQ), Projects, and Lab Manuals for all branches and semesters.</p>
+                <div class="d-flex flex-column flex-md-row justify-content-center align-items-center">
+                    <a href="diploma/syllabus.html" class="btn btn-diploma btn-lg mb-3 mb-md-0">Diploma Resources</a>
+                    <a href="pg-diploma/syllabus.html" class="btn btn-pg-diploma btn-lg">PG Diploma Resources</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section class="resources-section">
+        <div class="container">
+            <div class="section-title scroll-animate">
+                <h2>Complete Study Resources</h2>
+                <p>Everything you need to excel in your Diploma & PG Diploma programs - Polytechnic notes PDF, Semester wise polytechnic notes, and Diploma engineering ebooks</p>
+            </div>
+            <div class="row g-4">
+                <!-- Books -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="resource-card scroll-animate">
+                        <div class="resource-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="resource-content">
+                            <h3>Textbooks & Reference Books</h3>
+                            <p>Comprehensive collection of prescribed textbooks and reference materials for all semesters - BTEUP books free download.</p>
+                            <ul class="resource-list">
+                                <li><i class="fas fa-check"></i> All Semester Textbooks</li>
+                                <li><i class="fas fa-check"></i> Reference Books</li>
+                                <li><i class="fas fa-check"></i> Subject-wise Collections</li>
+                                <li><i class="fas fa-check"></i> Digital & PDF Formats</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Notes -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="resource-card scroll-animate">
+                        <div class="resource-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="resource-content">
+                            <h3>Study Notes</h3>
+                            <p>Well-organized notes covering entire syllabus with important topics and explanations - BTEUP notes for all branches.</p>
+                            <ul class="resource-list">
+                                <li><i class="fas fa-check"></i> Chapter-wise Notes</li>
+                                <li><i class="fas fa-check"></i> Important Formulas</li>
+                                <li><i class="fas fa-check"></i> Solved Examples</li>
+                                <li><i class="fas fa-check"></i> Revision Notes</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- PYQs -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="resource-card scroll-animate">
+                        <div class="resource-icon">
+                            <i class="fas fa-file-invoice"></i>
+                        </div>
+                        <div class="resource-content">
+                            <h3>Previous Year Questions</h3>
+                            <p>Complete collection of previous year question papers with solutions - BTEUP pyq semester wise.</p>
+                            <ul class="resource-list">
+                                <li><i class="fas fa-check"></i> Last 10 Years PYQs</li>
+                                <li><i class="fas fa-check"></i> Subject-wise Collections</li>
+                                <li><i class="fas fa-check"></i> Solved Papers</li>
+                                <li><i class="fas fa-check"></i> Model Test Papers</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Syllabus -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="resource-card scroll-animate">
+                        <div class="resource-icon">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                        <div class="resource-content">
+                            <h3>Syllabus & Curriculum</h3>
+                            <p>Updated syllabus for all branches and semesters with detailed subject information - BTEUP syllabus for all branches.</p>
+                            <ul class="resource-list">
+                                <li><i class="fas fa-check"></i> Semester-wise Syllabus</li>
+                                <li><i class="fas fa-check"></i> Branch-specific Curriculum</li>
+                                <li><i class="fas fa-check"></i> Credit System Details</li>
+                                <li><i class="fas fa-check"></i> Practical/Lab Syllabus</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Lab Manuals -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="resource-card scroll-animate">
+                        <div class="resource-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <div class="resource-content">
+                            <h3>Lab Manuals & Practicals</h3>
+                            <p>Complete practical files and lab manuals for all laboratory subjects - Polytechnic all branch notes.</p>
+                            <ul class="resource-list">
+                                <li><i class="fas fa-check"></i> Experiment Procedures</li>
+                                <li><i class="fas fa-check"></i> Viva Questions</li>
+                                <li><i class="fas fa-check"></i> Sample Reports</li>
+                                <li><i class="fas fa-check"></i> Software Manuals</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Projects -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="resource-card scroll-animate">
+                        <div class="resource-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <div class="resource-content">
+                            <h3>Projects & Reports</h3>
+                            <p>Sample projects, reports, and presentations for final year and mini projects - Diploma project PDF free.</p>
+                            <ul class="resource-list">
+                                <li><i class="fas fa-check"></i> Final Year Projects</li>
+                                <li><i class="fas fa-check"></i> Mini Projects</li>
+                                <li><i class="fas fa-check"></i> Project Reports</li>
+                                <li><i class="fas fa-check"></i> Presentation Slides</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contribution Section - REPLACED Top Contributors -->
+    <section class="contribution-section">
+        <div class="container">
+            <div class="section-title scroll-animate">
+                <h2>Help Others Succeed</h2>
+                <p>Contribute your study materials and help thousands of students excel in their exams</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-8 text-center">
+                    <div class="scroll-animate">
+                        <h3 class="mb-4">Share Your Knowledge</h3>
+                        <p class="mb-4">Your notes, PYQs, and study materials can make a huge difference for other students. Join our community of contributors and help build the most comprehensive resource hub for BTEUP students.</p>
+                        <a href="contribution-page.html" class="btn btn-contribute">
+                            <i class="fas fa-hands-helping me-2"></i> Contribute Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section class="programs-section">
+        <div class="container">
+            <div class="section-title scroll-animate">
+                <h2>Our Programs</h2>
+                <p>Comprehensive resources for both Diploma and PG Diploma courses - Branch wise diploma resources</p>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="program-card scroll-animate-left">
+                        <div class="program-icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <h3>Diploma Programs</h3>
+                        <p>Complete study materials for 3-year diploma courses in Engineering & Technology - Diploma notes all branches.</p>
+                        <ul class="resource-list">
+                            <li><i class="fas fa-check"></i> Mechanical Engineering</li>
+                            <li><i class="fas fa-check"></i> Civil Engineering</li>
+                            <li><i class="fas fa-check"></i> Electrical Engineering</li>
+                            <li><i class="fas fa-check"></i> Computer Science</li>
+                            <li><i class="fas fa-check"></i> Electronics Engineering</li>
+                            <li><i class="fas fa-check"></i> All Other Branches</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="program-card scroll-animate-right">
+                        <div class="program-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>PG Diploma Programs</h3>
+                        <p>Advanced study resources for Post Graduate Diploma courses - PG Diploma notes and study material.</p>
+                        <ul class="resource-list">
+                            <li><i class="fas fa-check"></i> Advanced Engineering</li>
+                            <li><i class="fas fa-check"></i> Management Studies</li>
+                            <li><i class="fas fa-check"></i> Computer Applications</li>
+                            <li><i class="fas fa-check"></i> Technical Specializations</li>
+                            <li><i class="fas fa-check"></i> Professional Courses</li>
+                            <li><i class="fas fa-check"></i> All PG Programs</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <!-- <section class="stats-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-6">
+                    <div class="stat-item scroll-animate">
+                        <div class="stat-number" data-count="100">0</div>
+                        <div class="stat-text">Study Materials</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item scroll-animate">
+                        <div class="stat-number" data-count="50">0</div>
+                        <div class="stat-text">Branches Covered</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item scroll-animate">
+                        <div class="stat-number" data-count="15000">0</div>
+                        <div class="stat-text">Happy Students</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item scroll-animate">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-text">Resource Access</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content scroll-animate">
+                <h2 class="display-5 fw-bold mb-4">Ready to Ace Your Exams?</h2>
+                <p class="mb-5">Join thousands of diploma students who are already benefiting from our comprehensive study resources - Best website for diploma students</p>
+                <a href="#" class="btn btn-whatsapp-join btn-lg px-5 py-3 fw-bold">
+                    <i class="fab fa-whatsapp"></i> Join WhatsApp Group for Updates
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <!-- Brand Info -->
+                <div class="col-lg-4 mb-4">
+                    <h4 class="mb-3"> <i class="fas fa-graduation-cap"></i>BTEUP HUB</h4>
+                    <p class="mb-4">"Your complete resource hub for Diploma & PG Diploma studies. Providing quality education materials since 2024 - Technical education notes download."</p>
+                </div>
+                
+                <!-- Diploma Resources -->
+                <div class="col-lg-4 mb-4">
+                    <h5 class="mb-3">Diploma Resources</h5>
+                    <div class="footer-links">
+                        <div class="row">
+                            <div class="col-6">
+                                <p><a href="diploma/syllabus.html">Syllabus</a></p>
+                                <p><a href="diploma/pyq.html">PYQ</a></p>
+                                <p><a href="diploma/notes.html">Notes</a></p>
+                            </div>
+                            <div class="col-6">
+                                <p><a href="diploma/book.html">Books</a></p>
+                                <p><a href="diploma/project.html">Projects</a></p>
+                                <p><a href="/">Lab Manuals</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- PG Diploma Resources -->
+                <div class="col-lg-4 mb-4">
+                    <h5 class="mb-3">PG Diploma Resources</h5>
+                    <div class="footer-links">
+                        <div class="row">
+                            <div class="col-6">
+                                <p><a href="pg-diploma/syllabus.html">Syllabus</a></p>
+                                <p><a href="pg-diploma/pyq.html">PYQ</a></p>
+                                <p><a href="pg-diploma/notes.html">Notes</a></p>
+                            </div>
+                            <div class="col-6">
+                                <p><a href="pg-diploma/book.html">Books</a></p>
+                                <p><a href="pg-diploma/project.html">Projects</a></p>
+                                <p><a href="/">Lab Manuals</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="copyright text-center">
+                <div class="row">
+                    <div class="col-md-6 text-md-start">
+                         <p><a href="privacy-policy.html" style="color: #e9ecef; text-decoration: none; ">Privacy Policy</a>  | <a href="disclaimer.html" style="color: #e9ecef; text-decoration: none;">Disclaimer</a></p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <p>© 2025 BTEUP HUB. All rights reserved.</p>
+                        <p>Powered by : <span style="color: #ff4400; font-weight: 800;"> HARIOM MAURYA</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script>
+        // Enhanced scroll animation with Intersection Observer
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize animations for elements with scroll-animate classes
+            const animatedElements = document.querySelectorAll('.scroll-animate, .scroll-animate-left, .scroll-animate-right, .scroll-animate-scale');
+            
+            // Create Intersection Observer for scroll animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                        
+                        // If it's a resource card with list items, animate them too
+                        if (entry.target.classList.contains('resource-card') || entry.target.classList.contains('program-card')) {
+                            const listItems = entry.target.querySelectorAll('.resource-list li');
+                            listItems.forEach((item, index) => {
+                                setTimeout(() => {
+                                    item.style.opacity = 1;
+                                    item.style.transform = 'translateY(0)';
+                                }, index * 100);
+                            });
+                        }
+                        
+                        // If it's a stats item with count animation
+                        if (entry.target.classList.contains('stat-item') && entry.target.querySelector('.stat-number[data-count]')) {
+                            animateCount(entry.target.querySelector('.stat-number[data-count]'));
+                        }
+                    }
+                });
+            }, { 
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+            
+            // Observe all animated elements
+            animatedElements.forEach(el => {
+                observer.observe(el);
+            });
+            
+            // Hero section animation on page load
+            const heroContent = document.querySelector('.hero-content');
+            setTimeout(() => {
+                heroContent.classList.add('animated');
+            }, 300);
+            
+            // Navbar active link highlighting
+            const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            
+            navLinks.forEach(link => {
+                const linkHref = link.getAttribute('href');
+                if (linkHref === currentPage || (currentPage === 'index.html' && linkHref === 'index.html')) {
+                    link.classList.add('active');
+                }
+                
+                link.addEventListener('click', function() {
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+            
+            // Navbar scroll effect
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    document.querySelector('.navbar').classList.add('navbar-scrolled');
+                } else {
+                    document.querySelector('.navbar').classList.remove('navbar-scrolled');
+                }
+            });
+            
+            // Count animation function
+            function animateCount(element) {
+                const target = parseInt(element.getAttribute('data-count'));
+                const duration = 2000; // 2 seconds
+                const step = target / (duration / 16); // 60fps
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += step;
+                    if (current >= target) {
+                        clearInterval(timer);
+                        current = target;
+                    }
+                    element.textContent = Math.floor(current).toLocaleString();
+                }, 16);
+            }
+            
+            // Progress bar functionality
+            const progressBar = document.getElementById('progressBar');
+            
+            function updateProgressBar() {
+                const windowHeight = window.innerHeight;
+                const documentHeight = document.documentElement.scrollHeight - windowHeight;
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const progress = (scrollTop / documentHeight) * 100;
+                progressBar.style.width = progress + '%';
+            }
+            
+            // Update progress bar on scroll
+            window.addEventListener('scroll', updateProgressBar);
+            
+            // Initialize progress bar
+            updateProgressBar();
+        });
+    </script>
+</body>
+</html>

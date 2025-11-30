@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contribute - BTEUP HUB</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #ff4400;
+            --primary-light: #ff6a33;
+            --primary-dark: #cc3600;
+            --secondary-color: #000000;
+            --light-color: #f8f9fa;
+            --dark-color: #1a1a1a;
+            --text-light: #f5f5f5;
+            --text-dark: #333333;
+            --card-bg: #ffffff;
+            --section-bg: #f8f9fa;
+            --footer-bg: #000000;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-dark);
+            overflow-x: hidden;
+            background-color: #f9fafb;
+        }
+        
+        /* Navbar */
+        .navbar {
+            background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(248, 249, 250, 1) 100%);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            padding: 15px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-scrolled {
+            padding: 10px 0;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(240, 240, 240, 1) 100%) !important;
+            backdrop-filter: blur(10px);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            white-space: nowrap;
+        }
+        
+        .navbar-brand i {
+            font-size: 1.8rem;
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+        
+        .navbar-brand span:first-child {
+            color: var(--primary-color);
+            font-weight: 800;
+        }
+        
+        .navbar-brand span:last-child {
+            color: var(--primary-dark);
+            font-weight: 700;
+        }
+        
+        .navbar-nav {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            overflow-x: auto;
+            white-space: nowrap;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        .navbar-nav::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .navbar-nav .nav-link {
+            color: #343a40 !important;
+            font-weight: 500;
+            padding: 8px 12px !important;
+            margin: 0 3px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+        
+        .navbar-nav .nav-link i {
+            margin-right: 6px;
+            width: 18px;
+            text-align: center;
+            font-size: 1rem;
+            color: var(--dark-color);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            color: var(--primary-color) !important;
+            background-color: rgba(255, 68, 0, 0.1);
+        }
+        
+        .navbar-nav .nav-link:hover i {
+            transform: scale(1.1);
+            color: var(--primary-light);
+        }
+        
+        .navbar-nav .nav-link.active {
+            color: var(--primary-color) !important;
+            background: rgba(255, 68, 0, 0.1);
+            font-weight: 600;
+        }
+        
+        .navbar-nav .nav-link.active i {
+            color: var(--primary-color);
+        }
+        
+        .btn-whatsapp-join {
+            background: linear-gradient(135deg, #00c951, #00a843);
+            border: none;
+            color: white;
+            padding: 6px 15px;
+            font-weight: 600;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            margin-left: 10px;
+            font-size: 0.85rem;
+            white-space: nowrap;
+            box-shadow: 0 5px 15px rgba(0, 201, 81, 0.4);
+        }
+        
+        .btn-whatsapp-join:hover {
+            background: linear-gradient(135deg, #00a843, #008c35);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 168, 67, 0.5);
+        }
+        
+        /* Mobile view में भी single line रखने के लिए */
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                overflow-x: auto;
+            }
+            
+            .navbar-nav {
+                flex-direction: row;
+                width: max-content;
+            }
+            
+            .navbar-nav .nav-link {
+                padding: 10px 12px !important;
+            }
+            
+            .navbar-nav .btn-whatsapp-join {
+                margin-left: 10px;
+                margin-top: 0;
+                width: auto;
+            }
+        }
+        
+        /* CONTRIBUTION PAGE SPECIFIC STYLES */
+        .page-header {
+            background: linear-gradient(90deg, var(--primary-dark), var(--primary-color));
+            color: white;
+            padding: 100px 0 50px;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="%23ffffff" opacity="0.1"><polygon points="1000,0 1000,100 0,100"></polygon></svg>');
+            background-size: cover;
+        }
+        
+        .content-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            padding: 40px;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+        }
+        
+        .content-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+        
+        .about-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            display: inline-block;
+            padding: 15px;
+            border-radius: 50%;
+            background: rgba(255, 68, 0, 0.1);
+        }
+        
+        .language-toggle {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            z-index: 1000;
+        }
+        
+        .language-btn {
+            background: white;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .language-btn:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        footer {
+            background: var(--footer-bg);
+            color: white;
+            padding: 60px 0 20px;
+            margin-top: 60px;
+        }
+
+        
+        footer h4,h5{
+            color:#ff4400;
+        }
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+        }
+        
+        .hindi-content {
+            display: none;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+            height: 100%;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .guideline-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .guideline-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        .guideline-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .guideline-list i {
+            color: #00c951;
+            margin-right: 10px;
+        }
+        
+        /* Updated Button Styles */
+        .btn-grad {
+            background-color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            color: #ffffff;
+            padding: 15px 45px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin: 30px auto;
+            text-decoration: none;
+            cursor: pointer;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 68, 0, 0.3);
+        }
+
+        .btn-grad:hover {
+            background-color: #ffffff;
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 68, 0, 0.4);
+        }
+        
+        .contribution-cta {
+            text-align: center;
+            padding: 50px 0;
+            background: rgba(255, 68, 0, 0.05);
+            border-radius: 15px;
+            margin: 40px 0;
+        }
+        
+        .contribution-hero {
+            text-align: center;
+            padding: 40px 0;
+            margin-bottom: 40px;
+        }
+        
+        .contribution-icon {
+            font-size: 4rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .language-toggle {
+                position: static;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            
+            .content-card {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-graduation-cap"></i>
+                <span>BTEUP</span> <span>HUB</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="fas fa-home"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="diploma/syllabus.html">
+                            <i class="fas fa-user-graduate"></i> Diploma
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pg-diploma/syllabus.html">
+                            <i class="fas fa-graduation-cap"></i> PG Diploma
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about us page.html">
+                            <i class="fas fa-info-circle"></i> About
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contribution-page.html">
+                            <i class="fas fa-hands-helping"></i> Contribute
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">
+                            <i class="fas fa-envelope"></i> Contact
+                        </a>
+                    </li>                                         
+
+                    <!-- WhatsApp Button -->
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Language Toggle -->
+    <div class="language-toggle">
+        <button id="languageToggle" class="language-btn">
+            <i class="fas fa-language me-2"></i>English
+        </button>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold english-content">Contribute</h1>
+            <h1 class="display-4 fw-bold hindi-content" style="display: none;">योगदान करें</h1>
+            <p class="lead english-content">Share Your Knowledge. Help Thousands. Become a Student Hero.</p>
+            <p class="lead hindi-content" style="display: none;">अपना ज्ञान साझा करें। हजारों की मदद करें। एक छात्र नायक बनें।</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Contribution Hero Section -->
+        <div class="contribution-hero">
+            <div class="contribution-icon">
+                <i class="fas fa-hands-helping" style="color: #ff0000;"></i>
+            </div>
+            <h2 class="english-content"> Share Your Notes. Help Thousands. Become a Student Hero.</h2>
+            <h2 class="hindi-content" style="display: none;"> अपने नोट्स साझा करें। हजारों की मदद करें। एक छात्र नायक बनें।</h2>
+            <p class="lead english-content">Every year, students struggle to find clean notes, PYQs, books, and project files. Your one small contribution can make someone's entire semester easier.</p>
+            <p class="lead hindi-content" style="display: none;">हर साल, छात्रों को साफ नोट्स, पिछले वर्ष के प्रश्न पत्र, किताबें और प्रोजेक्ट फाइलें ढूंढने में संघर्ष करना पड़ता है। आपका एक छोटा सा योगदान किसी का पूरा सेमेस्टर आसान बना सकता है।</p>
+            <p class="english-content">This platform grows because of students like <strong>you</strong> — who believe in helping others.</p>
+            <p class="hindi-content" style="display: none;">यह प्लेटफॉर्म आप जैसे छात्रों की वजह से बढ़ता है — जो दूसरों की मदद करने में विश्वास रखते हैं।</p>
+        </div>
+
+        <!-- Why Contribute Section -->
+        <div class="content-card">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="about-icon">
+                        <i class="fas fa-heart" style="color: #ffd902;"></i>
+                    </div>
+                    <h2 class="english-content"> Why Should You Contribute?</h2>
+                    <h2 class="hindi-content" style="display: none;"> आपको योगदान क्यों देना चाहिए?</h2>
+                    <p class="lead english-content">Because <strong>your notes can change someone's future</strong>.</p>
+                    <p class="lead hindi-content" style="display: none;">क्योंकि <strong>आपके नोट्स किसी का भविष्य बदल सकते हैं</strong>।</p>
+                    <p class="english-content">When you upload useful study material, you're not just sharing a PDF — you're helping students pass exams, score better, and study with confidence.</p>
+                    <p class="hindi-content" style="display: none;">जब आप उपयोगी अध्ययन सामग्री अपलोड करते हैं, तो आप सिर्फ एक PDF साझा नहीं कर रहे हैं — आप छात्रों को परीक्षा पास करने, बेहतर स्कोर करने और आत्मविश्वास के साथ अध्ययन करने में मदद कर रहे हैं।</p>
+                    
+                    <h4 class="mt-4 english-content">Your contribution:</h4>
+                    <h4 class="mt-4 hindi-content" style="display: none;">आपका योगदान:</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2 english-content"><i class="fas fa-check text-success me-2"></i> Saves time for thousands</li>
+                        <li class="mb-2 hindi-content" style="display: none;"><i class="fas fa-check text-success me-2"></i> हजारों का समय बचाता है</li>
+                        <li class="mb-2 english-content"><i class="fas fa-check text-success me-2"></i> Reduces stress during exams</li>
+                        <li class="mb-2 hindi-content" style="display: none;"><i class="fas fa-check text-success me-2"></i> परीक्षा के दौरान तनाव कम करता है</li>
+                        <li class="mb-2 english-content"><i class="fas fa-check text-success me-2"></i> Helps juniors learn faster</li>
+                        <li class="mb-2 hindi-content" style="display: none;"><i class="fas fa-check text-success me-2"></i> जूनियर्स को तेजी से सीखने में मदद करता है</li>
+                        <li class="mb-2 english-content"><i class="fas fa-check text-success me-2"></i> Builds a stronger student community</li>
+                        <li class="mb-2 hindi-content" style="display: none;"><i class="fas fa-check text-success me-2"></i> एक मजबूत छात्र समुदाय बनाता है</li>
+                    </ul>
+                    <p class="english-content">Even one clean PDF can make a real difference.</p>
+                    <p class="hindi-content" style="display: none;">एक साफ PDF भी वास्तविक अंतर ला सकती है।</p>
+                </div>
+                <div class="col-lg-6">
+                    <img src="image/BTEUP HUB_contributeimg.png"
+                         alt="Students Helping Each Other img" class="img-fluid rounded-3 shadow">
+                </div>
+            </div>
+        </div>
+
+        <!-- Recognition Section -->
+        <div class="content-card">
+            <div class="text-center mb-5">
+                <div class="about-icon">
+                    <i class="fas fa-trophy" style="color: #9a03ff;"></i>
+                </div>
+                <h2 class="english-content">🏅 Get Recognized as a Top Contributor</h2>
+                <h2 class="hindi-content" style="display: none;">🏅 एक शीर्ष योगदानकर्ता के रूप में मान्यता प्राप्त करें</h2>
+                <p class="lead english-content">Approved contributions will appear on our <strong style="color: red;">Home Page</strong> under:</p>
+                <p class="lead hindi-content" style="display: none;">अनुमोदित योगदान हमारे <strong  style="color: red;">होम पेज</strong> पर दिखाई देंगे:</p>
+                <h3 class="text-primary english-content">⭐ Top Contributors – Student Heroes</h3>
+                <h3 class="text-primary hindi-content" style="display: none;">⭐ शीर्ष योगदानकर्ता – Student Heroes</h3>
+            </div>
+            
+            <div class="row text-center">
+                <div class="col-md-3 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <h4 class="english-content">Your Photo</h4>
+                        <h4 class="hindi-content" style="display: none;">आपकी फोटो</h4>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-signature"></i>
+                        </div>
+                        <h4 class="english-content">Your Name</h4>
+                        <h4 class="hindi-content" style="display: none;">आपका नाम</h4>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <h4 class="english-content">Your College</h4>
+                        <h4 class="hindi-content" style="display: none;">आपका कॉलेज</h4>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <h4 class="english-content">Special Badges</h4>
+                        <h4 class="hindi-content" style="display: none;">विशेष बैज</h4>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="text-center english-content">This is your chance to get recognized, appreciated, and celebrated by the community.</p>
+            <p class="text-center hindi-content" style="display: none;">यह आपके लिए समुदाय द्वारा मान्यता प्राप्त करने, सराहना किए जाने और मनाए जाने का मौका है।</p>
+        </div>
+
+        <!-- What to Upload Section -->
+        <div class="content-card">
+            <div class="text-center mb-5">
+                <div class="about-icon">
+                    <i class="fas fa-upload" style="color: rgb(12, 6, 107);"></i>
+                </div>
+                <h2 class="english-content">📚 What Can You Upload?</h2>
+                <h2 class="hindi-content" style="display: none;">📚 आप क्या अपलोड कर सकते हैं?</h2>
+                <p class="lead english-content">You can contribute any useful study material, such as:</p>
+                <p class="lead hindi-content" style="display: none;">आप कोई भी उपयोगी अध्ययन सामग्री योगदान कर सकते हैं, जैसे:</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <ul class="guideline-list">
+                        <li><i class="fas fa-file-alt"></i> <span class="english-content">Notes (all semesters)</span><span class="hindi-content" style="display: none;">नोट्स (सभी सेमेस्टर)</span></li>
+                        <li><i class="fas fa-book"></i> <span class="english-content">Textbook PDFs</span><span class="hindi-content" style="display: none;">टेक्स्टबुक PDFs</span></li>
+                        <li><i class="fas fa-file-pdf"></i> <span class="english-content">PYQs (year-wise)</span><span class="hindi-content" style="display: none;">पिछले वर्ष के प्रश्न पत्र (वर्ष-वार)</span></li>
+                        <li><i class="fas fa-pencil-alt"></i> <span class="english-content">Handwritten notes (clear & readable)</span><span class="hindi-content" style="display: none;">हस्तलिखित नोट्स (स्पष्ट और पठनीय)</span></li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <ul class="guideline-list">
+                        <li><i class="fas fa-project-diagram"></i> <span class="english-content">Projects (minor/major)</span><span class="hindi-content" style="display: none;">प्रोजेक्ट्स (माइनर/मेजर)</span></li>
+                        <li><i class="fas fa-list-alt"></i> <span class="english-content">Syllabus</span><span class="hindi-content" style="display: none;">सिलेबस</span></li>
+                        <li><i class="fas fa-flask"></i> <span class="english-content">Lab manuals</span><span class="hindi-content" style="display: none;">लैब मैनुअल</span></li>
+                        <li><i class="fas fa-book-open"></i> <span class="english-content">eBooks</span><span class="hindi-content" style="display: none;">ई-बुक्स</span></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <p class="english-content"><strong>If it helps students → It's welcome here.</strong></p>
+                <p class="hindi-content" style="display: none;"><strong>अगर यह छात्रों की मदद करता है → यह यहाँ स्वागत योग्य है।</strong></p>
+            </div>
+        </div>
+
+        <!-- Quality Guidelines -->
+        <div class="content-card">
+            <div class="text-center mb-5">
+                <div class="about-icon">
+                    <i class="fas fa-check-circle"  style="color: #08861d;"></i>
+                </div>
+                <h2 class="english-content">✔ Quality Guidelines</h2>
+                <h2 class="hindi-content" style="display: none;">✔ गुणवत्ता दिशानिर्देश</h2>
+                <p class="lead english-content">To keep the platform clean and helpful:</p>
+                <p class="lead hindi-content" style="display: none;">प्लेटफॉर्म को साफ और सहायक बनाए रखने के लिए:</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <ul class="guideline-list">
+                        <li><i class="fas fa-check text-success"></i> <span class="english-content">PDFs must be readable</span><span class="hindi-content" style="display: none;">PDFs पठनीय होनी चाहिए</span></li>
+                        <li><i class="fas fa-check text-success"></i> <span class="english-content">No blurred or dark pages</span><span class="hindi-content" style="display: none;">कोई धुंधला या अंधेरा पेज नहीं</span></li>
+                        <li><i class="fas fa-check text-success"></i> <span class="english-content">No abusive or irrelevant content</span><span class="hindi-content" style="display: none;">कोई अपमानजनक या असंबंधित सामग्री नहीं</span></li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <ul class="guideline-list">
+                        <li><i class="fas fa-check text-success"></i> <span class="english-content">No duplicate files</span><span class="hindi-content" style="display: none;">कोई डुप्लिकेट फाइलें नहीं</span></li>
+                        <li><i class="fas fa-check text-success"></i> <span class="english-content">Only educational material</span><span class="hindi-content" style="display: none;">केवल शैक्षिक सामग्री</span></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <p class="english-content"><strong>Good quality = Quick approval.</strong></p>
+                <p class="hindi-content" style="display: none;"><strong>अच्छी गुणवत्ता = त्वरित अनुमोदन।</strong></p>
+            </div>
+        </div>
+
+        <!-- Call to Action - FIXED SECTION -->
+        <div class="contribution-cta">
+            <div class="about-icon">
+                <i class="fas fa-rocket"  style="color: #000000;"></i>
+            </div>
+            <h2 class="english-content">🚀 Ready to Contribute?</h2>
+            <h2 class="hindi-content" style="display: none;">🚀 योगदान देने के लिए तैयार हैं?</h2>
+            <p class="lead english-content">Click the button below to submit your PDF. Our team will review it, and once approved, you'll be featured as a <strong>Student Hero</strong> on the homepage.</p>
+            <p class="lead hindi-content" style="display: none;">अपनी PDF जमा करने के लिए नीचे दिए गए बटन पर क्लिक करें। हमारी टीम इसकी समीक्षा करेगी, और एक बार अनुमोदित होने के बाद, आपको होमपेज पर <strong>छात्र नायक</strong> के रूप में दिखाया जाएगा।</p>
+            
+            <!-- FIXED: Direct Google Form Links -->
+            <a href="https://forms.gle/rwkyr2G7TS83Q5DS6" target="_blank" class="btn-grad english-content">
+                <i class="fas fa-upload me-2"></i>Upload Here
+            </a>
+            <a href="https://forms.gle/rwkyr2G7TS83Q5DS6" target="_blank" class="btn-grad hindi-content" style="display: none;">
+                <i class="fas fa-upload me-2"></i>Upload Here
+            </a>
+            
+            <p class="mt-4 english-content">Together, let's make learning easy for everyone.</p>
+            <p class="mt-4 hindi-content" style="display: none;">एक साथ, आइए सभी के लिए सीखना आसान बनाएं।</p>
+            <p class="english-content">Thank you for being a part of this mission ❤️</p>
+            <p class="hindi-content" style="display: none;">इस मिशन का हिस्सा बनने के लिए धन्यवाद ❤️</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <!-- Brand Info -->
+                <div class="col-lg-4 mb-4">
+                    <h4 class="mb-3" style="color: #ff4400;"> <i class="fas fa-graduation-cap"></i>BTEUP HUB</h4>
+                    <p class="mb-4">"Your complete resource hub for Diploma & PG Diploma studies. Providing quality education materials since 2024 - Technical education notes download."</p>
+                </div>
+                
+                <!-- Diploma Resources -->
+                <div class="col-lg-4 mb-4">
+                    <h5 class="mb-3" style="color: #ff4400;">Diploma Resources</h5>
+                    <div class="footer-links">
+                        <div class="row">
+                            <div class="col-6">
+                                <p><a href="diploma/syllabus.html">Syllabus</a></p>
+                                <p><a href="diploma/pyq.html">PYQ</a></p>
+                                <p><a href="diploma/notes.html">Notes</a></p>
+                            </div>
+                            <div class="col-6">
+                                <p><a href="diploma/book.html">Books</a></p>
+                                <p><a href="diploma/project.html">Projects</a></p>
+                                <p><a href="/">Lab Manuals</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- PG Diploma Resources -->
+                <div class="col-lg-4 mb-4">
+                    <h5 class="mb-3" style="color: #ff4400;">PG Diploma Resources</h5>
+                    <div class="footer-links">
+                        <div class="row">
+                            <div class="col-6">
+                                <p><a href="pg-diploma/syllabus.html">Syllabus</a></p>
+                                <p><a href="pg-diploma/pyq.html">PYQ</a></p>
+                                <p><a href="pg-diploma/notes.html">Notes</a></p>
+                            </div>
+                            <div class="col-6">
+                                <p><a href="pg-diploma/book.html">Books</a></p>
+                                <p><a href="pg-diploma/project.html">Projects</a></p>
+                                <p><a href="/">Lab Manuals</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="copyright text-center">
+                <div class="row">
+                    <div class="col-md-6 text-md-start">
+                         <p><a href="privacy-policy.html" style="color: #e9ecef; text-decoration: none; ">Privacy Policy</a>  | <a href="disclaimer.html" style="color: #e9ecef; text-decoration: none;">Disclaimer</a></p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <p>© 2025 BTEUP HUB. All rights reserved.</p>
+                        <p>Powered by : <span style="color: #ff4400; font-weight: 800;"> HARIOM MAURYA</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script>
+        // Language Toggle Functionality
+        document.getElementById('languageToggle').addEventListener('click', function() {
+            const isEnglish = this.innerHTML.includes('English');
+            const hindiContent = document.querySelectorAll('.hindi-content');
+            const englishContent = document.querySelectorAll('.english-content');
+            
+            if (isEnglish) {
+                // Switch to Hindi
+                this.innerHTML = '<i class="fas fa-language me-2"></i>हिंदी';
+                englishContent.forEach(el => el.style.display = 'none');
+                hindiContent.forEach(el => el.style.display = 'block');
+            } else {
+                // Switch to English
+                this.innerHTML = '<i class="fas fa-language me-2"></i>English';
+                hindiContent.forEach(el => el.style.display = 'none');
+                englishContent.forEach(el => el.style.display = 'block');
+            }
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                document.querySelector('.navbar').classList.add('navbar-scrolled');
+            } else {
+                document.querySelector('.navbar').classList.remove('navbar-scrolled');
+            }
+        });
+
+        // REMOVED the upload button alert functionality
+        // Now buttons will directly open Google Form in new tab
+    </script>
+</body>
+</html>
