@@ -8,6 +8,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-color: #ff4400;
@@ -24,7 +26,7 @@
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: var(--text-dark);
             background-color: #f9fafb;
             overflow-x: hidden;
@@ -307,231 +309,347 @@
             transform: translateX(5px);
         }
         
-        .admin-card {
-            background: linear-gradient(90deg, var(--primary-dark), var(--primary-color));
-            color: white;
-            border-radius: 15px;
-            padding: 30px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            margin: 30px 0;
-        }
-        
-        .admin-avatar {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            border: 5px solid white;
-            margin: 0 auto 20px;
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: white;
-        }
-        
-        .form-control {
-            border-radius: 10px;
-            padding: 12px 15px;
-            border: 2px solid #e9ecef;
-            transition: all 0.3s ease;
-        }
-        
-        .form-control:focus {
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 0.2rem rgba(255, 68, 0, 0.25);
-        }
-        
-        .social-links {
+        /* FIXED MODERN FLIP CARD STYLES */
+        .admin-flip-section {
+            margin: 50px 0;
             display: flex;
             justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .social-icon {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            background: white;
-            display: flex;
             align-items: center;
-            justify-content: center;
-            color: var(--primary-color);
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-            text-decoration: none;
+            min-height: 500px;
         }
         
-        .social-icon:hover {
-            transform: translateY(-3px);
-            background: var(--primary-color);
-            color: white;
+        .flip-card {
+            background-color: transparent;
+            width: 100%;
+            max-width: 380px;
+            height: 480px;
+            perspective: 1500px;
+            font-family: 'Poppins', sans-serif;
         }
         
-        .contact-section {
-            margin-bottom: 30px;
-            padding: 25px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            border-left: 4px solid var(--primary-color);
-        }
-        
-        .section-title {
-            color: var(--primary-color);
-            font-weight: 700;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            font-size: 24px;
-        }
-        
-        .section-title i {
-            margin-right: 15px;
-            color: var(--primary-dark);
-            font-size: 28px;
-        }
-        
-        .contact-content {
-            line-height: 1.7;
-            color: var(--dark-color);
-        }
-        
-        .contact-content ul {
-            padding-left: 20px;
-        }
-        
-        .contact-content li {
-            margin-bottom: 10px;
+        .flip-card-inner {
             position: relative;
-            padding-left: 10px;
-        }
-        
-        .contact-content li::before {
-            content: "•";
-            color: var(--primary-color);
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
-        
-        .info-card {
-            background: white;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            border-left: 4px solid var(--primary-color);
-        }
-        
-        .info-card i {
-            font-size: 24px;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
-        
-        .quick-links {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .quick-links li {
-            margin-bottom: 10px;
-            padding: 8px 0;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .quick-links a {
-            color: var(--dark-color);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-        }
-        
-        .quick-links a:hover {
-            color: var(--primary-color);
-            padding-left: 5px;
-        }
-        
-        .quick-links i {
-            margin-right: 10px;
-            color: var(--primary-dark);
-        }
-        
-        .author-card {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            padding: 20px;
-            border-radius: 8px;
-            border-left: 4px solid #ffc107;
-        }
-        
-        .contact-info {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            padding: 30px;
-            border-radius: 8px;
-            text-align: center;
-            margin-top: 40px;
-            border: 2px solid var(--primary-color);
-        }
-        
-        .contact-form {
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            padding: 40px;
-            margin-bottom: 30px;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-label {
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: var(--dark-color);
-        }
-        
-        .success-popup {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 1050;
+            text-align: center;
+            transition: transform 0.8s ease;
+            transform-style: preserve-3d;
+            cursor: pointer;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+        }
+        
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 20px;
+            overflow: hidden;
+            background: white;
+        }
+        
+        /* FRONT SIDE */
+        .flip-card-front {
+            display: flex;
+            flex-direction: column;
+            color: #333333;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .profile-image-container {
+            height: 50%;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .profile-initials {
+            font-size: 4.5rem;
+            font-weight: 900;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 2px;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .profile-info {
+            padding: 25px 20px;
+            height: 50%;
+            display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
+            position: relative;
         }
         
-        .success-popup-content {
-            background: white;
-            border-radius: 15px;
-            padding: 40px;
+        .profile-name {
+            font-size: 1.9rem;
+            font-weight: 900;
+            margin-bottom: 8px;
+            color: #222222;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 0.5px;
+            line-height: 1;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            max-width: 500px;
-            width: 90%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 100%;
+            padding: 0 5px;
         }
         
-        .success-icon {
-            font-size: 4rem;
-            color: #28a745;
-            margin-bottom: 20px;
-        }
-        
-        .success-popup h3 {
+        .profile-title {
+            font-size: 0.95rem;
             color: var(--primary-color);
-            margin-bottom: 15px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            padding: 5px 12px;
+            background: rgba(255, 68, 0, 0.08);
+            border-radius: 30px;
+            border: 1px solid rgba(255, 68, 0, 0.15);
         }
         
-        .success-popup p {
-            margin-bottom: 25px;
-            color: var(--dark-color);
+        .profile-tagline {
+            font-size: 0.85rem;
+            color: #666666;
+            line-height: 1.4;
+            margin-bottom: 15px;
+            max-width: 280px;
+            font-style: italic;
+        }
+        
+        .flip-hint {
+            position: absolute;
+            bottom: 15px;
+            color: #888888;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            width: 100%;
+        }
+        
+        .flip-hint i {
+            font-size: 0.9rem;
+            animation: pulse 2s infinite;
+            color: var(--primary-color);
+        }
+        
+        @keyframes pulse {
+            0% { transform: translateX(0); }
+            50% { transform: translateX(5px); }
+            100% { transform: translateX(0); }
+        }
+        
+        /* BACK SIDE - OPTIMIZED */
+        .flip-card-back {
+            transform: rotateY(180deg);
+            padding: 30px 25px;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+        
+        .back-header {
+            text-align: left;
+            margin-bottom: 15px;
+            width: 100%;
+        }
+        
+        .back-title {
+            font-size: 1.6rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: #222222;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 0.5px;
+            position: relative;
+            padding-bottom: 8px;
+            width: 100%;
+        }
+        
+        .back-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary-color), var(--primary-light));
+            border-radius: 2px;
+        }
+        
+        .about-text {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #555555;
+            margin-bottom: 18px;
+            text-align: left;
+            width: 100%;
+        }
+        
+        .quote-section {
+            margin: 15px 0;
+            padding: 18px;
+            background: linear-gradient(135deg, rgba(255, 68, 0, 0.03) 0%, rgba(255, 106, 51, 0.03) 100%);
+            border-radius: 12px;
+            border-left: 4px solid var(--primary-color);
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+        
+        .quote-section::before {
+            content: '"';
+            position: absolute;
+            top: -12px;
+            left: 12px;
+            font-size: 3.5rem;
+            color: rgba(255, 68, 0, 0.1);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+        }
+        
+        .quote-text {
+            font-size: 1.2rem;
+            font-weight: 700;
+            font-style: italic;
+            color: #222222;
+            line-height: 1.3;
+            text-align: center;
+            margin: 0;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .social-section {
+            margin-top: auto;
+            width: 100%;
+            padding-top: 15px;
+        }
+        
+        .social-title {
+            font-size: 0.95rem;
+            color: #666666;
+            margin-bottom: 12px;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .social-icons-row {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: nowrap;
+            overflow: hidden;
+        }
+        
+        .social-icon-flip {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666666;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
+            flex-shrink: 0;
+        }
+        
+        .social-icon-flip:hover {
+            transform: translateY(-4px) scale(1.1);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+        
+        .social-icon-flip.instagram:hover {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            border-color: transparent;
+        }
+        
+        .social-icon-flip.youtube:hover {
+            background: #FF0000;
+            border-color: transparent;
+        }
+        
+        .social-icon-flip.telegram:hover {
+            background: #0088cc;
+            border-color: transparent;
+        }
+        
+        .social-icon-flip.email:hover {
+            background: linear-gradient(135deg, #EA4335, #D44638);
+            border-color: transparent;
+        }
+        
+        .social-icon-flip.website:hover {
+            background: linear-gradient(135deg, #4285F4, #34A853);
+            border-color: transparent;
+        }
+        
+        /* Card Glow Effect */
+        .flip-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--primary-color), var(--primary-light), var(--primary-color));
+            z-index: -1;
+            border-radius: 22px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        
+        .flip-card:hover::before {
+            opacity: 0.3;
+        }
+        
+        /* Responsive Fixes */
+        @media (max-width: 992px) {
+            .admin-flip-section {
+                margin: 40px 0;
+                min-height: 460px;
+            }
+            
+            .flip-card {
+                max-width: 360px;
+                height: 460px;
+            }
+            
+            .profile-name {
+                font-size: 1.8rem;
+            }
+            
+            .back-title {
+                font-size: 1.5rem;
+            }
         }
         
         @media (max-width: 768px) {
@@ -552,509 +670,23 @@
             .contact-form {
                 padding: 25px;
             }
-        }
-    </style>
-</head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <i class="fas fa-graduation-cap"></i>
-                <span>BTEUP</span> <span>HUB</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">
-                            <i class="fas fa-home"></i> Home
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="diploma/syllabus.html">
-                            <i class="fas fa-user-graduate"></i> Diploma
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pgdiploma/syllabus.html">
-                            <i class="fas fa-graduation-cap"></i> PG Diploma
-                        </a>
-                    </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="about us page.html">
-                            <i class="fas fa-info-circle"></i> About
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contribution-page.html">
-                            <i class="fas fa-hands-helping"></i> Contribute
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link active" href="contact.html">
-                            <i class="fas fa-envelope"></i> Contact
-                        </a>
-                    </li>                                         
-
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Language Toggle -->
-    <div class="language-toggle">
-        <button id="languageToggle" class="language-btn">
-            <i class="fas fa-language me-2"></i>English
-        </button>
-    </div>
-
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container text-center">
-            <h1 class="display-4 fw-bold english-content" style=" font-family:  RedditDisplay-ExtraBold;">Contact Us</h1>
-            <h1 class="display-4 fw-bold hindi-content" style="display: none; " >हमसे संपर्क करें</h1>
-            <p class="lead english-content"  ">Get in touch with our team</p>
-            <p class="lead hindi-content" style="display: none;">हमारी टीम से संपर्क करें</p>
-        </div>
-    </section>
-
-    <div class="container">
-        <!-- Removed Admin Information Card -->
-
-        <div class="row">
-            <!-- Contact Information -->
-            <div class="col-lg-6">
-                <div class="content-card">
-                    <div class="text-center mb-4">
-                        <div class="contact-icon">
-                            <i class="fas fa-address-book"></i>
-                        </div>
-                        <h2 class="english-content">Get In Touch</h2>
-                        <h2 class="hindi-content" style="display: none;">संपर्क में रहें</h2>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="d-flex align-items-center">
-                            <div class="contact-icon me-3" style="font-size: 1.5rem; padding: 10px;">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div>
-                                <h5 class="english-content">Our Address</h5>
-                                <h5 class="hindi-content" style="display: none;">हमारा पता</h5>
-                                <p class="mb-0 english-content">BTEUP HUB Educational Services<br>Gorakhpur, Uttar Pradesh, India</p>
-                                <p class="mb-0 hindi-content" style="display: none;">BTEUP HUB Educational Services<br>Gorakhpur, Uttar Pradesh, India</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="d-flex align-items-center">
-                            <div class="contact-icon me-3" style="font-size: 1.5rem; padding: 10px;">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div>
-                                <h5 class="english-content">Phone Number</h5>
-                                <h5 class="hindi-content" style="display: none;">फोन नंबर</h5>
-                                <p class="mb-0 english-content">+91 900XX XX124</p>
-                                <p class="mb-0 hindi-content" style="display: none;">+91 XXXXX XXXXX</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="d-flex align-items-center">
-                            <div class="contact-icon me-3" style="font-size: 1.5rem; padding: 10px;">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div>
-                                <h5 class="english-content">Email Address</h5>
-                                <h5 class="hindi-content" style="display: none;">ईमेल पता</h5>
-                                <p class="mb-0 english-content">team.bteuphub@gmail.com<br>team.bteuphub@gmail.com</p>
-                                <p class="mb-0 hindi-content" style="display: none;">team.bteuphub@gmail.com<br>team.bteuphub@gmail.com</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="d-flex align-items-center">
-                            <div class="contact-icon me-3" style="font-size: 1.5rem; padding: 10px;">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div>
-                                <h5 class="english-content">Working Hours</h5>
-                                <h5 class="hindi-content" style="display: none;">कार्य समय</h5>
-                                <p class="mb-0 english-content">Monday - Saturday: 9:00 AM - 6:00 PM<br>Sunday: Closed</p>
-                                <p class="mb-0 hindi-content" style="display: none;">सोमवार - शनिवार: सुबह 9:00 - शाम 6:00<br>रविवार: बंद</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             
-            <!-- Contact Form -->
-            <div class="col-lg-6">
-                <div class="contact-form">
-                    <div class="text-center mb-4">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <h2 class="english-content">Send Us a Message</h2>
-                        <h2 class="hindi-content" style="display: none;">हमें संदेश भेजें</h2>
-                    </div>
-                    
-                    <form id="contactForm" action="https://script.google.com/macros/s/AKfycbxdLczFKY0ULck_Y2mUH9hGckAA0vrclScBig8gG5b43I1ndUxohLOHIiTsLoZrATjy/exec" 
-                          method="POST" 
-                          class="contact-form">
-                        <div class="row mb-3">
-                            <div class="col">
-                                <label class="form-label english-content">First Name</label>
-                                <label class="form-label hindi-content" style="display: none;">पहला नाम</label>
-                                <input type="text" name="first_name" class="form-control" required>
-                            </div>
-
-                            <div class="col">
-                                <label class="form-label english-content">Last Name</label>
-                                <label class="form-label hindi-content" style="display: none;">अंतिम नाम</label>
-                                <input type="text" name="last_name" class="form-control" required>
-                            </div>
-                        </div>
-
-                        <div class="mb-3">
-                            <label class="form-label english-content">Email</label>
-                            <label class="form-label hindi-content" style="display: none;">ईमेल</label>
-                            <input type="email" name="email" class="form-control" required>
-                        </div>
-
-                        <div class="mb-3">
-                            <label class="form-label english-content">Phone</label>
-                            <label class="form-label hindi-content" style="display: none;">फोन</label>
-                            <input type="text" name="phone" class="form-control" required>
-                        </div>
-
-                        <div class="mb-3">
-                            <label class="form-label english-content">Subject</label>
-                            <label class="form-label hindi-content" style="display: none;">विषय</label>
-                            <select name="query" class="form-select" required>
-                                <option value="General Enquiry" class="english-content">General Enquiry</option>
-                                <option value="General Enquiry" class="hindi-content" style="display: none;">सामान्य पूछताछ</option>
-                                <option value="Technical Support" class="english-content">Technical Support</option>
-                                <option value="Technical Support" class="hindi-content" style="display: none;">तकनीकी सहायता</option>
-                                <option value="Content Related" class="english-content">Content Related</option>
-                                <option value="Content Related" class="hindi-content" style="display: none;">सामग्री संबंधित</option>
-                                <option value="Partnership" class="english-content">Partnership</option>
-                                <option value="Partnership" class="hindi-content" style="display: none;">साझेदारी</option>
-                                <option value="Other" class="english-content">Other</option>
-                                <option value="Other" class="hindi-content" style="display: none;">अन्य</option>
-                            </select>
-                        </div>
-
-                        <div class="mb-3">
-                            <label class="form-label english-content">Message</label>
-                            <label class="form-label hindi-content" style="display: none;">संदेश</label>
-                            <textarea name="message" rows="5" class="form-control" required></textarea>
-                        </div>
-
-                        <button type="submit" class="submit-btn english-content">
-                            <i class="fas fa-paper-plane me-2"></i>Send Message
-                        </button>
-                        <button type="submit" class="submit-btn hindi-content" style="display: none;">
-                            <i class="fas fa-paper-plane me-2"></i>संदेश भेजें
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-
-        <!-- Success Popup -->
-        <div id="successPopup" class="success-popup">
-            <div class="success-popup-content">
-                <div class="success-icon">
-                    <i class="fas fa-check-circle"></i>
-                </div>
-                <h3 class="english-content">Thank You!</h3>
-                <h3 class="hindi-content" style="display: none;">धन्यवाद!</h3>
-                <p class="english-content">Your message has been sent successfully. We'll get back to you as soon as possible.</p>
-                <p class="hindi-content" style="display: none;">आपका संदेश सफलतापूर्वक भेज दिया गया है। हम जल्द से जल्द आपको जवाब देंगे।</p>
-                <button class="contact-btn" id="closeSuccessPopup">
-                    <i class="fas fa-check me-2"></i> <span class="english-content">OK</span><span class="hindi-content" style="display: none;">ठीक है</span>
-                </button>
-            </div>
-        </div>
-
-        <!-- Updated Content Transparency Section -->
-        <div class="contact-section">
-            <h2 class="section-title">
-                <i class="fas fa-file-alt"></i> <span class="english-content">Educational Resource Transparency</span><span class="hindi-content" style="display: none;">शैक्षिक संसाधन पारदर्शिता</span>
-            </h2>
-            <div class="contact-content">
-                <p class="english-content">At BTEUP HUB, we are committed to providing high-quality, freely accessible educational resources for Diploma and PG Diploma students. Our content includes:</p>
-                <p class="hindi-content" style="display: none;">BTEUP HUB में, हम डिप्लोमा और पीजी डिप्लोमा छात्रों के लिए उच्च-गुणवत्ता वाले, स्वतंत्र रूप से सुलभ शैक्षिक संसाधन प्रदान करने के लिए प्रतिबद्ध हैं। हमारी सामग्री में शामिल हैं:</p>
-                
-                <ul>
-                    <li class="english-content">Comprehensive syllabus coverage for all semesters</li>
-                    <li class="hindi-content" style="display: none;">सभी सेमेस्टर के लिए व्यापक पाठ्यक्रम कवरेज</li>
-                    
-                    <li class="english-content">Previous year question papers with solutions</li>
-                    <li class="hindi-content" style="display: none;">समाधान के साथ पिछले वर्ष के प्रश्न पत्र</li>
-                    
-                    <li class="english-content">Well-organized study notes and reference materials</li>
-                    <li class="hindi-content" style="display: none;">सुव्यवस्थित अध्ययन नोट्स और संदर्भ सामग्री</li>
-                    
-                    <li class="english-content">Recommended textbooks and reference books</li>
-                    <li class="hindi-content" style="display: none;">अनुशंसित पाठ्यपुस्तकें और संदर्भ पुस्तकें</li>
-                    
-                    <li class="english-content">Project ideas and implementation guides</li>
-                    <li class="hindi-content" style="display: none;">परियोजना विचार और कार्यान्वयन मार्गदर्शिकाएँ</li>
-                    
-                    <li class="english-content">Lab manuals and practical resources</li>
-                    <li class="hindi-content" style="display: none;">प्रयोगशाला मैनुअल और व्यावहारिक संसाधन</li>
-                </ul>
-                
-                <p class="english-content">All our resources are carefully curated and regularly updated to ensure they align with the latest BTEUP curriculum requirements. We welcome feedback and suggestions from students and faculty to improve our content.</p>
-                <p class="hindi-content" style="display: none;">हमारे सभी संसाधनों को सावधानीपूर्वक चुना गया है और नवीनतम BTEUP पाठ्यक्रम आवश्यकताओं के साथ संरेखित सुनिश्चित करने के लिए नियमित रूप से अद्यतन किया जाता है। हम अपनी सामग्री में सुधार के लिए छात्रों और संकाय से प्रतिक्रिया और सुझावों का स्वागत करते हैं।</p>
-                
-                <p class="english-content">If you have questions about our resources or would like to contribute educational materials, please contact us at <strong>team.bteuphub@gmail.com</strong>.</p>
-                <p class="hindi-content" style="display: none;">यदि आपके पास हमारे संसाधनों के बारे में प्रश्न हैं या शैक्षिक सामग्री में योगदान देना चाहते हैं, तो कृपया <strong>team.bteuphub@gmail.com</strong> पर हमसे संपर्क करें।</p>
-            </div>
-        </div>
+            .admin-flip-section {
+                margin: 30px 0;
+                min-height: 440px;
+            }
+            
+            .flip-card {
+                max-width: 340px;
+                height: 440px;
+            }
+            
+            .profile-name {
+                font-size: 1.7rem;
+                padding: 0 5px;
+            }
+            
+            .profile-info {
+                padding: 22px 15px;
+            }
         
-        <!-- Quick Links Section -->
-        <div class="contact-section">
-            <h2 class="section-title">
-                <i class="fas fa-link"></i> <span class="english-content">Quick Links</span><span class="hindi-content" style="display: none;">त्वरित लिंक</span>
-            </h2>
-            <div class="contact-content">
-                <ul class="quick-links">
-                    <li><a href="diploma/syllabus.html"><i class="fas fa-arrow-right"></i> <span class="english-content">Diploma Syllabus</span><span class="hindi-content" style="display: none;">डिप्लोमा पाठ्यक्रम</span></a></li>
-                    <li><a href="../pg-diploma/syllabus.html"><i class="fas fa-arrow-right"></i> <span class="english-content">PG Diploma Syllabus</span><span class="hindi-content" style="display: none;">पीजी डिप्लोमा पाठ्यक्रम</span></a></li>
-                    <li><a href="diploma/pyq.html"><i class="fas fa-arrow-right"></i> <span class="english-content">Previous Year Questions</span><span class="hindi-content" style="display: none;">पिछले वर्ष के प्रश्न</span></a></li>
-                    <li><a href="diploma/notes.html"><i class="fas fa-arrow-right"></i> <span class="english-content">Study Notes</span><span class="hindi-content" style="display: none;">अध्ययन नोट्स</span></a></li>
-                    <li><a href="diploma/book.html"><i class="fas fa-arrow-right"></i> <span class="english-content">Reference Books</span><span class="hindi-content" style="display: none;">संदर्भ पुस्तकें</span></a></li>
-                    <li><a href="about us page.html"><i class="fas fa-arrow-right"></i> <span class="english-content">About Us</span><span class="hindi-content" style="display: none;">हमारे बारे में</span></a></li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- FAQ Section -->
-        <div class="content-card">
-            <div class="text-center mb-4">
-                <div class="contact-icon">
-                    <i class="fas fa-question-circle"></i>
-                </div>
-                <h2 class="english-content">Frequently Asked Questions</h2>
-                <h2 class="hindi-content" style="display: none;">अक्सर पूछे जाने वाले प्रश्न</h2>
-            </div>
-            
-            <div class="accordion" id="faqAccordion">
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button english-content" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
-                            How can I contribute study materials?
-                        </button>
-                        <button class="accordion-button hindi-content" style="display: none;" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
-                            मैं अध्ययन सामग्री कैसे योगदान कर सकता हूं?
-                        </button>
-                    </h2>
-                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body english-content">
-                            You can contribute by using our upload feature or by contacting us directly. All submissions are reviewed before publishing.
-                        </div>
-                        <div class="accordion-body hindi-content" style="display: none;">
-                            आप हमारे अपलोड फीचर का उपयोग करके या सीधे हमसे संपर्क करके योगदान कर सकते हैं। प्रकाशन से पहले सभी सबमिशन की समीक्षा की जाती है।
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed english-content" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
-                            Are the previous papers officially verified?
-                        </button>
-                        <button class="accordion-button collapsed hindi-content" style="display: none;" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
-                            क्या पिछले पेपर आधिकारिक रूप से सत्यापित हैं?
-                        </button>
-                    </h2>
-                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body english-content">
-                            While we strive for accuracy, we recommend cross-verifying with official sources as these are collected from various sources.
-                        </div>
-                        <div class="accordion-body hindi-content" style="display: none;">
-                            जबकि हम सटीकता के लिए प्रयास करते हैं, हम आधिकारिक स्रोतों के साथ क्रॉस-सत्यापन की सलाह देते हैं क्योंकि ये विभिन्न स्रोतों से एकत्र किए जाते हैं।
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed english-content" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
-                            How long does it take to get a response?
-                        </button>
-                        <button class="accordion-button collapsed hindi-content" style="display: none;" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
-                            जवाब मिलने में कितना समय लगता है?
-                        </button>
-                    </h2>
-                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body english-content">
-                            We typically respond within 24-48 hours during business days.
-                        </div>
-                        <div class="accordion-body hindi-content" style="display: none;">
-                            हम आमतौर पर व्यावसायिक दिनों के दौरान 24-48 घंटों के भीतर जवाब देते हैं।
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Additional Information -->
-        <div class="contact-info">
-            <h3 class="english-content">Need Immediate Assistance?</h3>
-            <h3 class="hindi-content" style="display: none;">तत्काल सहायता की आवश्यकता है?</h3>
-            <p class="english-content">If you require immediate assistance or have urgent inquiries about BTEUP resources, exam updates, or technical issues with our website, please don't hesitate to reach out to us.</p>
-            <p class="hindi-content" style="display: none;">यदि आपको तत्काल सहायता की आवश्यकता है या BTEUP संसाधनों, परीक्षा अपडेट, या हमारी वेबसाइट के साथ तकनीकी मुद्दों के बारे में तत्काल पूछताछ है, तो कृपया हमसे संपर्क करने में संकोच न करें।</p>
-            <button class="contact-btn" style=" background: #ffffff;" ><a 
-   href="https://mail.google.com/mail/?view=cm&fs=1&to=team.bteuphub@gmail.com&su=Contact regarding"
-   target="_blank" style="text-decoration: none; color:#ff4400 ;">
-
-                <i class="fas fa-envelope me-2"></i> <span class="english-content">Email Us Now</span><span class="hindi-content" style="display: none;">अभी ईमेल करें</span>
-            </a></button>
-        </div>
-
-        <!-- Brand Section -->
-        <div class="brand-section">
-            <h3 class="english-content"><a class="navbar-brand">
-                <i class="fas fa-graduation-cap"></i>
-                <span>BTEUP</span> <span>HUB</span>
-            </a></h3>
-            <h3 class="hindi-content" style="display: none;"><a class="navbar-brand">
-                <i class="fas fa-graduation-cap"></i>
-                <span>BTEUP</span> <span>HUB</span>
-            </a></h3>
-            <p class="lead english-content" style="color: rgb(194, 9, 9); font-weight: 700;" >"Empowering students with knowledge and resources for a brighter future."</p>
-            <p class="lead hindi-content" style="display: none; color: rgb(194, 9, 9); font-weight: 700;" >"एक उज्जवल भविष्य के लिए ज्ञान और संसाधनों के साथ छात्रों को सशक्त बनाना।"</p>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <!-- Brand Info -->
-                <div class="col-lg-4 mb-4">
-                    <h4 class="mb-3" style="color: #ff4400;"> <i class="fas fa-graduation-cap"></i>BTEUP HUB</h4>
-                    <p class="mb-4">"Your complete resource hub for Diploma & PG Diploma studies. Providing quality education materials since 2024 - Technical education notes download."</p>
-                </div>
-                
-                <!-- Diploma Resources -->
-                <div class="col-lg-4 mb-4">
-                    <h5 class="mb-3" style="color: #ff4400;">Diploma Resources</h5>
-                    <div class="footer-links">
-                        <div class="row">
-                            <div class="col-6">
-                                <p><a href="diploma/syllabus.html">Syllabus</a></p>
-                                <p><a href="diploma/pyq.html">PYQ</a></p>
-                                <p><a href="diploma/notes.html">Notes</a></p>
-                            </div>
-                            <div class="col-6">
-                                <p><a href="diploma/book.html">Books</a></p>
-                                <p><a href="diploma/project.html">Projects</a></p>
-                                <p><a href="index.html">Lab Manuals</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- PG Diploma Resources -->
-                <div class="col-lg-4 mb-4">
-                    <h5 class="mb-3" style="color: #ff4400;">PG Diploma Resources</h5>
-                    <div class="footer-links">
-                        <div class="row">
-                            <div class="col-6">
-                                <p><a href="pg-diploma/syllabus.html">Syllabus</a></p>
-                                <p><a href="pg-diploma/pyq.html">PYQ</a></p>
-                                <p><a href="pg-diploma/notes.html">Notes</a></p>
-                            </div>
-                            <div class="col-6">
-                                <p><a href="pg-diploma/book.html">Books</a></p>
-                                <p><a href="pg-diploma/project.html">Projects</a></p>
-                                <p><a href="index.html">Lab Manuals</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Copyright -->
-            <div class="copyright text-center">
-                <div class="row">
-                    <div class="col-md-6 text-md-start">
-                         <p><a href="privacy-policy.html" style="color: #e9ecef; text-decoration: none; ">Privacy Policy</a>  | <a href="disclaimer.html" style="color: #e9ecef; text-decoration: none;">Disclaimer</a></p>
-                    </div>
-                    <div class="col-md-6 text-md-end">
-                        <p>© 2025 BTEUP HUB. All rights reserved.</p>
-                        <p>Powered by : <span style="color: #ff4400; font-weight: 800;"> HARIOM MAURYA</span></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- Custom JS -->
-    <script>
-        // Language Toggle Functionality
-        document.getElementById('languageToggle').addEventListener('click', function() {
-            const isEnglish = this.innerHTML.includes('English');
-            const hindiContent = document.querySelectorAll('.hindi-content');
-            const englishContent = document.querySelectorAll('.english-content');
-            
-            if (isEnglish) {
-                // Switch to Hindi
-                this.innerHTML = '<i class="fas fa-language me-2"></i>हिंदी';
-                englishContent.forEach(el => el.style.display = 'none');
-                hindiContent.forEach(el => el.style.display = 'block');
-            } else {
-                // Switch to English
-                this.innerHTML = '<i class="fas fa-language me-2"></i>English';
-                hindiContent.forEach(el => el.style.display = 'none');
-                englishContent.forEach(el => el.style.display = 'block');
-            }
-        });
-
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 50) {
-                document.querySelector('.navbar').classList.add('navbar-scrolled');
-            } else {
-                document.querySelector('.navbar').classList.remove('navbar-scrolled');
-            }
-        });
-
-        // Form submission handling
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Show success popup
-            document.getElementById('successPopup').style.display = 'flex';
-            
-            // Reset form
-            this.reset();
-        });
-
-        // Close success popup
-        document.getElementById('closeSuccessPopup').addEventListener('click', function() {
-            document.getElementById('successPopup').style.display = 'none';
-        });
-    </script>
-</body>
-
-</html>
-
-
-
