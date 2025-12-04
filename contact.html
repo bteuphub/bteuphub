@@ -30,7 +30,20 @@
             overflow-x: hidden;
         }
         
-        /* Navbar Styles */
+        /* ========== RESPONSIVE UTILITY CLASSES ========== */
+        .text-responsive {
+            font-size: calc(14px + 0.5vw);
+        }
+        
+        .heading-responsive {
+            font-size: calc(1.5rem + 1vw);
+        }
+        
+        .padding-responsive {
+            padding: calc(1rem + 0.5vw);
+        }
+        
+        /* ========== NAVBAR RESPONSIVE STYLES ========== */
         .navbar {
             background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(248, 249, 250, 1) 100%);
             box-shadow: 0 2px 15px rgba(0,0,0,0.1);
@@ -142,28 +155,7 @@
             box-shadow: 0 10px 20px rgba(0, 168, 67, 0.5);
         }
         
-        @media (max-width: 991px) {
-            .navbar-collapse {
-                overflow-x: auto;
-            }
-            
-            .navbar-nav {
-                flex-direction: row;
-                width: max-content;
-            }
-            
-            .navbar-nav .nav-link {
-                padding: 10px 12px !important;
-            }
-            
-            .navbar-nav .btn-whatsapp-join {
-                margin-left: 10px;
-                margin-top: 0;
-                width: auto;
-            }
-        }
-        
-        /* CONTACT PAGE SPECIFIC STYLES */
+        /* ========== PAGE HEADER RESPONSIVE STYLES ========== */
         .page-header {
             background: linear-gradient(90deg, var(--primary-dark), var(--primary-color));
             color: white;
@@ -184,6 +176,7 @@
             background-size: cover;
         }
         
+        /* ========== CONTENT CARD RESPONSIVE STYLES ========== */
         .content-card {
             background: white;
             border-radius: 15px;
@@ -209,7 +202,7 @@
             background: rgba(255, 68, 0, 0.1);
         }
         
-        /* Updated Button Styles */
+        /* ========== BUTTON RESPONSIVE STYLES ========== */
         .gradient-btn, .contact-btn, .submit-btn {
             background-color: var(--primary-color);
             border: 2px solid var(--primary-color);
@@ -231,6 +224,7 @@
             box-shadow: 0 8px 25px rgba(255, 68, 0, 0.4);
         }
         
+        /* ========== LANGUAGE TOGGLE RESPONSIVE ========== */
         .language-toggle {
             position: fixed;
             top: 100px;
@@ -254,6 +248,7 @@
             color: white;
         }
         
+        /* ========== FOOTER RESPONSIVE STYLES ========== */
         footer {
             background: var(--footer-bg);
             color: white;
@@ -264,6 +259,7 @@
         footer h4,h5{
             color:#ff4400;
         }
+        
         .footer-links a {
             color: rgba(255,255,255,0.7);
             text-decoration: none;
@@ -282,6 +278,7 @@
             color: rgba(255,255,255,0.6);
         }
         
+        /* ========== BRAND SECTION RESPONSIVE ========== */
         .brand-section {
             text-align: center;
             padding: 30px;
@@ -294,6 +291,7 @@
             display: none;
         }
         
+        /* ========== CONTACT ITEM RESPONSIVE ========== */
         .contact-item {
             margin-bottom: 25px;
             padding: 20px;
@@ -307,30 +305,277 @@
             transform: translateX(5px);
         }
         
-        .admin-card {
-            background: linear-gradient(90deg, var(--primary-dark), var(--primary-color));
-            color: white;
-            border-radius: 15px;
-            padding: 30px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            margin: 30px 0;
+        /* ========== ADMIN FLIP CARD RESPONSIVE STYLES ========== */
+        .admin-flip-card-container {
+            display: flex;
+            justify-content: center;
+            margin: 40px 0;
         }
         
+        .admin-flip-card {
+            width: 320px;
+            height: 400px;
+            perspective: 1000px;
+        }
+        
+        .admin-flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+        
+        .admin-flip-card.flipped .admin-flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .admin-flip-card-front,
+        .admin-flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            overflow: hidden;
+        }
+        
+        .admin-flip-card-front {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .admin-flip-card-back {
+            background: linear-gradient(135deg, #ff4400 0%, #cc3600 100%);
+            color: white;
+            transform: rotateY(180deg);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        /* Admin avatar container */
         .admin-avatar {
-            width: 120px;
-            height: 120px;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
-            border: 5px solid white;
-            margin: 0 auto 20px;
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .admin-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        /* Hover effect for desktop */
+        .admin-avatar:hover img {
+            transform: scale(1.2);
+        }
+
+        /* Active effect for mobile */
+        .admin-avatar.zoomed img {
+            transform: scale(1.3);
+            position: relative;
+            z-index: 100;
+        }
+
+        /* Fullscreen zoom overlay */
+        .image-zoom-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            cursor: zoom-out;
+        }
+
+        .image-zoom-overlay.active {
+            display: flex;
+        }
+
+        .zoomed-image {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+            animation: zoomIn 0.3s ease;
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Zoom icon */
+        .zoom-indicator {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: var(--primary-color);
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 3rem;
+            font-size: 1rem;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+            z-index: 2;
+        }
+
+        .admin-avatar:hover .zoom-indicator {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        /* Close button for zoom overlay */
+        .zoom-close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--primary-color);
             color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .zoom-close-btn:hover {
+            background: var(--primary-dark);
+            transform: rotate(90deg);
+        }
+
+        .admin-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 5px;
         }
         
+        .admin-title {
+            font-size: 1rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .admin-social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .admin-social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .admin-social-icon:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+        
+        .admin-quote {
+            font-style: italic;
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            font-size: 0.95rem;
+        }
+        
+        .admin-quote-icon {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .admin-about {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        /* NEW FLIP BUTTON STYLES */
+        .flip-btn-container {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            text-align: right;
+        }
+        
+        .flip-btn {
+            border: none;
+            color: #ff4400;
+            padding: 8px 20px;
+            border-radius: 50%;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(255, 68, 0, 0.3);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+              
+        .flip-btn i {
+            font-size: 1rem;
+        }
+        
+        .back-flip-btn {
+            color:#ff4400;
+            border: 2px solid white;
+        }
+               
+        /* ========== FORM STYLES ========== */
         .form-control {
             border-radius: 10px;
             padding: 12px 15px;
@@ -343,33 +588,7 @@
             box-shadow: 0 0 0 0.2rem rgba(255, 68, 0, 0.25);
         }
         
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .social-icon {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            background: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary-color);
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-        
-        .social-icon:hover {
-            transform: translateY(-3px);
-            background: var(--primary-color);
-            color: white;
-        }
-        
+        /* ========== CONTACT SECTION RESPONSIVE ========== */
         .contact-section {
             margin-bottom: 30px;
             padding: 25px;
@@ -417,21 +636,6 @@
             left: 0;
         }
         
-        .info-card {
-            background: white;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            border-left: 4px solid var(--primary-color);
-        }
-        
-        .info-card i {
-            font-size: 24px;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
-        
         .quick-links {
             list-style: none;
             padding: 0;
@@ -461,22 +665,7 @@
             color: var(--primary-dark);
         }
         
-        .author-card {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            padding: 20px;
-            border-radius: 8px;
-            border-left: 4px solid #ffc107;
-        }
-        
-        .contact-info {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            padding: 30px;
-            border-radius: 8px;
-            text-align: center;
-            margin-top: 40px;
-            border: 2px solid var(--primary-color);
-        }
-        
+        /* ========== CONTACT FORM RESPONSIVE ========== */
         .contact-form {
             background: white;
             border-radius: 15px;
@@ -495,6 +684,7 @@
             color: var(--dark-color);
         }
         
+        /* ========== SUCCESS POPUP RESPONSIVE ========== */
         .success-popup {
             display: none;
             position: fixed;
@@ -534,23 +724,449 @@
             color: var(--dark-color);
         }
         
-        @media (max-width: 768px) {
-            .language-toggle {
-                position: static;
-                text-align: center;
-                margin-bottom: 20px;
+        /* ========== CONTACT INFO RESPONSIVE ========== */
+        .contact-info {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 40px;
+            border: 2px solid var(--primary-color);
+        }
+        
+        /* ========== RESPONSIVE MEDIA QUERIES ========== */
+        
+        /* Extra Large Devices (large desktops, 1200px and up) */
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 1140px;
             }
             
-            .content-card {
-                padding: 25px;
+            .admin-flip-card {
+                width: 340px;
+                height: 420px;
+            }
+            
+            .admin-name {
+                font-size: 2rem;
+            }
+        }
+        
+        /* Large Devices (desktops, 992px to 1199px) */
+        @media (max-width: 1199px) and (min-width: 992px) {
+            .container {
+                max-width: 960px;
+            }
+            
+            .admin-flip-card {
+                width: 320px;
+                height: 400px;
+            }
+            
+            .content-card, .contact-form {
+                padding: 35px;
+            }
+        }
+        
+        /* Medium Devices (tablets, 768px to 991px) */
+        @media (max-width: 991px) and (min-width: 768px) {
+            .container {
+                max-width: 720px;
+            }
+            
+            .navbar-collapse {
+                overflow-x: auto;
+            }
+            
+            .navbar-nav {
+                flex-direction: row;
+                width: max-content;
+            }
+            
+            .navbar-nav .nav-link {
+                padding: 10px 12px !important;
+            }
+            
+            .admin-flip-card {
+                width: 300px;
+                height: 380px;
+            }
+            
+            .admin-avatar {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .content-card, .contact-form {
+                padding: 30px;
+            }
+            
+            .page-header {
+                padding: 80px 0 40px;
             }
             
             .contact-section {
                 padding: 20px;
             }
+        }
+        
+        /* Small Devices (landscape phones, 576px to 767px) */
+        @media (max-width: 767px) and (min-width: 576px) {
+            .container {
+                max-width: 540px;
+            }
+            
+            .page-header {
+                padding: 70px 0 30px;
+            }
+            
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .admin-flip-card {
+                width: 280px;
+                height: 360px;
+            }
+            
+            .admin-avatar {
+                width: 110px;
+                height: 110px;
+            }
+            
+            .admin-name {
+                font-size: 1.6rem;
+            }
+            
+            .content-card, .contact-form {
+                padding: 25px;
+            }
+            
+            .contact-icon {
+                font-size: 2rem;
+                padding: 12px;
+            }
+            
+            .language-toggle {
+                position: static;
+                text-align: center;
+                margin-bottom: 20px;
+                margin-top: 10px;
+            }
+            
+            .language-btn {
+                padding: 10px 20px;
+            }
+            
+            .contact-section {
+                padding: 18px;
+            }
+            
+            .section-title {
+                font-size: 1.3rem;
+            }
+            
+            .section-title i {
+                font-size: 1.5rem;
+                margin-right: 10px;
+            }
+            
+            footer {
+                padding: 40px 0 15px;
+            }
+            
+            .copyright .row {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .copyright .col-md-6 {
+                width: 100%;
+                text-align: center !important;
+                margin-bottom: 10px;
+            }
+        }
+        
+        /* Extra Small Devices (portrait phones, less than 576px) */
+        @media (max-width: 575px) {
+            .container {
+                width: 100%;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+            
+            .page-header {
+                padding: 60px 0 25px;
+                margin-bottom: 25px;
+            }
+            
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .page-header p.lead {
+                font-size: 1rem;
+            }
+            
+            .admin-flip-card-container {
+                margin: 25px 0;
+            }
+            
+            .admin-flip-card {
+                width: 260px;
+                height: 340px;
+            }
+            
+            .admin-flip-card-front,
+            .admin-flip-card-back {
+                padding: 20px;
+            }
+            
+            .admin-avatar {
+                width: 100px;
+                height: 100px;
+                margin-bottom: 15px;
+            }
+            
+            .admin-name {
+                font-size: 1.4rem;
+            }
+            
+            .admin-title {
+                font-size: 0.9rem;
+                margin-bottom: 15px;
+            }
+            
+            .admin-social-icons {
+                gap: 10px;
+                margin-top: 15px;
+            }
+            
+            .admin-social-icon {
+                width: 35px;
+                height: 35px;
+                font-size: 0.9rem;
+            }
+            
+            .admin-about, .admin-quote {
+                font-size: 0.85rem;
+                margin-top: 15px;
+            }
+            
+            .flip-btn {
+                padding: 6px 15px;
+                font-size: 0.85rem;
+            }
+            
+            .content-card, .contact-form {
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+            
+            .contact-icon {
+                font-size: 1.8rem;
+                padding: 10px;
+                margin-bottom: 15px;
+            }
+            
+            .contact-item {
+                padding: 15px;
+                margin-bottom: 15px;
+            }
+            
+            .contact-item .contact-icon {
+                font-size: 1.2rem;
+                padding: 8px;
+            }
+            
+            .language-toggle {
+                position: static;
+                text-align: center;
+                margin-bottom: 15px;
+                margin-top: 10px;
+            }
+            
+            .language-btn {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+                width: 100%;
+                max-width: 200px;
+            }
+            
+            .contact-section {
+                padding: 15px;
+                margin-bottom: 20px;
+            }
+            
+            .section-title {
+                font-size: 1.2rem;
+                margin-bottom: 15px;
+            }
+            
+            .section-title i {
+                font-size: 1.3rem;
+                margin-right: 8px;
+            }
+            
+            .form-control, .form-select {
+                padding: 10px 12px;
+                font-size: 0.95rem;
+            }
+            
+            .submit-btn, .contact-btn {
+                padding: 10px 20px;
+                font-size: 0.95rem;
+                width: 100%;
+            }
+            
+            .brand-section {
+                padding: 20px;
+                margin: 25px 0;
+            }
+            
+            footer {
+                padding: 30px 0 10px;
+                margin-top: 40px;
+            }
+            
+            footer h4, footer h5 {
+                font-size: 1.1rem;
+            }
+            
+            .footer-links p {
+                margin-bottom: 8px;
+                font-size: 0.9rem;
+            }
+            
+            .copyright {
+                padding-top: 15px;
+                margin-top: 25px;
+                font-size: 0.8rem;
+            }
+            
+            .copyright .row {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .copyright .col-md-6 {
+                width: 100%;
+                text-align: center !important;
+                margin-bottom: 10px;
+            }
+            
+            .success-popup-content {
+                padding: 25px;
+            }
+            
+            .success-icon {
+                font-size: 3rem;
+            }
+            
+            .success-popup h3 {
+                font-size: 1.3rem;
+            }
+            
+            .success-popup p {
+                font-size: 0.95rem;
+            }
+            
+            .accordion-button {
+                font-size: 0.95rem;
+                padding: 12px 15px;
+            }
+            
+            .accordion-body {
+                font-size: 0.9rem;
+                padding: 12px 15px;
+            }
+        }
+        
+        /* Very Small Devices (mobile devices under 400px) */
+        @media (max-width: 400px) {
+            .navbar-brand {
+                font-size: 1.2rem;
+            }
+            
+            .navbar-brand i {
+                font-size: 1.4rem;
+            }
+            
+            .page-header h1 {
+                font-size: 1.6rem;
+            }
+            
+            .admin-flip-card {
+                width: 240px;
+                height: 320px;
+            }
+            
+            .admin-avatar {
+                width: 90px;
+                height: 90px;
+            }
+            
+            .admin-name {
+                font-size: 1.3rem;
+            }
+            
+            .admin-social-icons {
+                gap: 8px;
+            }
+            
+            .admin-social-icon {
+                width: 32px;
+                height: 32px;
+            }
+            
+            .flip-btn {
+                padding: 5px 12px;
+                font-size: 0.8rem;
+            }
             
             .contact-form {
-                padding: 25px;
+                padding: 15px;
+            }
+            
+            .form-row {
+                flex-direction: column;
+            }
+            
+            .form-row .col {
+                width: 100%;
+                margin-bottom: 15px;
+            }
+            
+            .quick-links li {
+                font-size: 0.9rem;
+            }
+            
+            .quick-links i {
+                font-size: 0.9rem;
+            }
+            
+            .brand-section h3 {
+                font-size: 1.3rem;
+            }
+            
+            .brand-section p.lead {
+                font-size: 0.95rem;
+            }
+        }
+        
+        /* Touch Device Optimizations */
+        @media (hover: none) and (pointer: coarse) {
+            .navbar-nav .nav-link:hover {
+                background-color: transparent;
+            }
+            
+            .content-card:hover {
+                transform: none;
+            }
+            
+            .contact-item:hover {
+                transform: none;
+                background: rgba(255, 68, 0, 0.05);
             }
         }
     </style>
@@ -599,8 +1215,6 @@
                             <i class="fas fa-envelope"></i> Contact
                         </a>
                     </li>                                         
-
-                    </li>
                 </ul>
             </div>
         </div>
@@ -616,15 +1230,92 @@
     <!-- Page Header -->
     <section class="page-header">
         <div class="container text-center">
-            <h1 class="display-4 fw-bold english-content" style=" font-family:  RedditDisplay-ExtraBold;">Contact Us</h1>
-            <h1 class="display-4 fw-bold hindi-content" style="display: none; " >हमसे संपर्क करें</h1>
-            <p class="lead english-content"  ">Get in touch with our team</p>
-            <p class="lead hindi-content" style="display: none;">हमारी टीम से संपर्क करें</p>
+            <h1 class="display-4 fw-bold english-content heading-responsive">Contact Us</h1>
+            <h1 class="display-4 fw-bold hindi-content heading-responsive" style="display: none;">हमसे संपर्क करें</h1>
+            <p class="lead english-content text-responsive">Get in touch with our team</p>
+            <p class="lead hindi-content text-responsive" style="display: none;">हमारी टीम से संपर्क करें</p>
         </div>
     </section>
 
     <div class="container">
-        <!-- Removed Admin Information Card -->
+        <!-- Admin Flip Card with Click Button -->
+        <div class="admin-flip-card-container">
+            <div class="admin-flip-card" id="adminCard">
+                <div class="admin-flip-card-inner">
+                    <!-- Front Side -->
+                    <div class="admin-flip-card-front">
+                        <div class="admin-avatar" id="adminAvatar">
+                            <img src="image/admin.png" alt="Admin Image" id="adminImage">
+                            <div class="zoom-indicator">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </div>
+                        <div class="admin-name english-content">Hariom Maurya</div>
+                        <div class="admin-name hindi-content" style="display: none;">हरिओम मौर्य</div>
+                        <div class="admin-title english-content">Founder / Admin</div>
+                        <div class="admin-title hindi-content" style="display: none;">संस्थापक / व्यवस्थापक</div>
+                        
+                        <div class="admin-social-icons">
+                            <a href="#" class="admin-social-icon">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="admin-social-icon">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="admin-social-icon">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="admin-social-icon">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                        
+                        <!-- Flip Button Front Side -->
+                        <div class="flip-btn-container">
+                            <button class="flip-btn" id="flipBtnFront">
+                                <i class="fas fa-sync-alt"></i> 
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Back Side -->
+                    <div class="admin-flip-card-back">
+                        <div class="admin-quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        
+                        <div class="admin-about english-content">
+                            Passionate educator and developer dedicated to creating accessible learning resources for technical students. With a vision to bridge the gap between curriculum and practical knowledge.
+                        </div>
+                        <div class="admin-about hindi-content" style="display: none;">
+                            तकनीकी छात्रों के लिए सुलभ शिक्षण संसाधन बनाने के लिए समर्पित उत्साही शिक्षक और डेवलपर। पाठ्यक्रम और व्यावहारिक ज्ञान के बीच की खाई को पाटने के लिए एक दृष्टि के साथ।
+                        </div>
+                        
+                        <div class="admin-quote english-content">
+                            "Education is the most powerful weapon which you can use to change the world."
+                        </div>
+                        <div class="admin-quote hindi-content" style="display: none;">
+                            "शिक्षा सबसे शक्तिशाली हथियार है जिसका उपयोग आप दुनिया को बदलने के लिए कर सकते हैं।"
+                        </div>
+                        
+                        <!-- Flip Button Back Side -->
+                        <div class="flip-btn-container">
+                            <button class="flip-btn back-flip-btn" id="flipBtnBack">
+                                <i class="fas fa-sync-alt"></i> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Zoom Overlay -->
+        <div class="image-zoom-overlay" id="zoomOverlay">
+            <button class="zoom-close-btn" id="closeZoom">
+                <i class="fas fa-times"></i>
+            </button>
+            <img src="" alt="Zoomed Image" class="zoomed-image" id="zoomedImage">
+        </div>
 
         <div class="row">
             <!-- Contact Information -->
@@ -647,7 +1338,7 @@
                                 <h5 class="english-content">Our Address</h5>
                                 <h5 class="hindi-content" style="display: none;">हमारा पता</h5>
                                 <p class="mb-0 english-content">BTEUP HUB Educational Services<br>Gorakhpur, Uttar Pradesh, India</p>
-                                <p class="mb-0 hindi-content" style="display: none;">BTEUP HUB Educational Services<br>Gorakhpur, Uttar Pradesh, India</p>
+                                <p class="mb-0 hindi-content" style="display: none;">BTEUP HUB Educational Services<br>गोरखपुर, उत्तर प्रदेश, भारत</p>
                             </div>
                         </div>
                     </div>
@@ -661,7 +1352,7 @@
                                 <h5 class="english-content">Phone Number</h5>
                                 <h5 class="hindi-content" style="display: none;">फोन नंबर</h5>
                                 <p class="mb-0 english-content">+91 900XX XX124</p>
-                                <p class="mb-0 hindi-content" style="display: none;">+91 XXXXX XXXXX</p>
+                                <p class="mb-0 hindi-content" style="display: none;">+91 900XX XX124</p>
                             </div>
                         </div>
                     </div>
@@ -674,8 +1365,8 @@
                             <div>
                                 <h5 class="english-content">Email Address</h5>
                                 <h5 class="hindi-content" style="display: none;">ईमेल पता</h5>
-                                <p class="mb-0 english-content">team.bteuphub@gmail.com<br>team.bteuphub@gmail.com</p>
-                                <p class="mb-0 hindi-content" style="display: none;">team.bteuphub@gmail.com<br>team.bteuphub@gmail.com</p>
+                                <p class="mb-0 english-content">team.bteuphub@gmail.com</p>
+                                <p class="mb-0 hindi-content" style="display: none;">team.bteuphub@gmail.com</p>
                             </div>
                         </div>
                     </div>
@@ -711,13 +1402,13 @@
                           method="POST" 
                           class="contact-form">
                         <div class="row mb-3">
-                            <div class="col">
+                            <div class="col-md-6 mb-3 mb-md-0">
                                 <label class="form-label english-content">First Name</label>
                                 <label class="form-label hindi-content" style="display: none;">पहला नाम</label>
                                 <input type="text" name="first_name" class="form-control" required>
                             </div>
 
-                            <div class="col">
+                            <div class="col-md-6">
                                 <label class="form-label english-content">Last Name</label>
                                 <label class="form-label hindi-content" style="display: none;">अंतिम नाम</label>
                                 <input type="text" name="last_name" class="form-control" required>
@@ -740,16 +1431,11 @@
                             <label class="form-label english-content">Subject</label>
                             <label class="form-label hindi-content" style="display: none;">विषय</label>
                             <select name="query" class="form-select" required>
-                                <option value="General Enquiry" class="english-content">General Enquiry</option>
-                                <option value="General Enquiry" class="hindi-content" style="display: none;">सामान्य पूछताछ</option>
-                                <option value="Technical Support" class="english-content">Technical Support</option>
-                                <option value="Technical Support" class="hindi-content" style="display: none;">तकनीकी सहायता</option>
-                                <option value="Content Related" class="english-content">Content Related</option>
-                                <option value="Content Related" class="hindi-content" style="display: none;">सामग्री संबंधित</option>
-                                <option value="Partnership" class="english-content">Partnership</option>
-                                <option value="Partnership" class="hindi-content" style="display: none;">साझेदारी</option>
-                                <option value="Other" class="english-content">Other</option>
-                                <option value="Other" class="hindi-content" style="display: none;">अन्य</option>
+                                <option value="General Enquiry">General Enquiry</option>
+                                <option value="Technical Support">Technical Support</option>
+                                <option value="Content Related">Content Related</option>
+                                <option value="Partnership">Partnership</option>
+                                <option value="Other">Other</option>
                             </select>
                         </div>
 
@@ -759,10 +1445,10 @@
                             <textarea name="message" rows="5" class="form-control" required></textarea>
                         </div>
 
-                        <button type="submit" class="submit-btn english-content">
+                        <button type="submit" class="submit-btn english-content w-100">
                             <i class="fas fa-paper-plane me-2"></i>Send Message
                         </button>
-                        <button type="submit" class="submit-btn hindi-content" style="display: none;">
+                        <button type="submit" class="submit-btn hindi-content w-100" style="display: none;">
                             <i class="fas fa-paper-plane me-2"></i>संदेश भेजें
                         </button>
                     </form>
@@ -831,7 +1517,7 @@
             <div class="contact-content">
                 <ul class="quick-links">
                     <li><a href="diploma/syllabus.html"><i class="fas fa-arrow-right"></i> <span class="english-content">Diploma Syllabus</span><span class="hindi-content" style="display: none;">डिप्लोमा पाठ्यक्रम</span></a></li>
-                    <li><a href="../pg-diploma/syllabus.html"><i class="fas fa-arrow-right"></i> <span class="english-content">PG Diploma Syllabus</span><span class="hindi-content" style="display: none;">पीजी डिप्लोमा पाठ्यक्रम</span></a></li>
+                    <li><a href="pgdiploma/syllabus.html"><i class="fas fa-arrow-right"></i> <span class="english-content">PG Diploma Syllabus</span><span class="hindi-content" style="display: none;">पीजी डिप्लोमा पाठ्यक्रम</span></a></li>
                     <li><a href="diploma/pyq.html"><i class="fas fa-arrow-right"></i> <span class="english-content">Previous Year Questions</span><span class="hindi-content" style="display: none;">पिछले वर्ष के प्रश्न</span></a></li>
                     <li><a href="diploma/notes.html"><i class="fas fa-arrow-right"></i> <span class="english-content">Study Notes</span><span class="hindi-content" style="display: none;">अध्ययन नोट्स</span></a></li>
                     <li><a href="diploma/book.html"><i class="fas fa-arrow-right"></i> <span class="english-content">Reference Books</span><span class="hindi-content" style="display: none;">संदर्भ पुस्तकें</span></a></li>
@@ -916,12 +1602,12 @@
             <h3 class="hindi-content" style="display: none;">तत्काल सहायता की आवश्यकता है?</h3>
             <p class="english-content">If you require immediate assistance or have urgent inquiries about BTEUP resources, exam updates, or technical issues with our website, please don't hesitate to reach out to us.</p>
             <p class="hindi-content" style="display: none;">यदि आपको तत्काल सहायता की आवश्यकता है या BTEUP संसाधनों, परीक्षा अपडेट, या हमारी वेबसाइट के साथ तकनीकी मुद्दों के बारे में तत्काल पूछताछ है, तो कृपया हमसे संपर्क करने में संकोच न करें।</p>
-            <button class="contact-btn" style=" background: #ffffff;" ><a 
-   href="https://mail.google.com/mail/?view=cm&fs=1&to=team.bteuphub@gmail.com&su=Contact regarding"
-   target="_blank" style="text-decoration: none; color:#ff4400 ;">
-
-                <i class="fas fa-envelope me-2"></i> <span class="english-content">Email Us Now</span><span class="hindi-content" style="display: none;">अभी ईमेल करें</span>
-            </a></button>
+            <button class="contact-btn" style=" background: #ffffff;" >
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=team.bteuphub@gmail.com&su=Contact regarding"
+                   target="_blank" style="text-decoration: none; color:#ff4400 ;">
+                    <i class="fas fa-envelope me-2"></i> <span class="english-content">Email Us Now</span><span class="hindi-content" style="display: none;">अभी ईमेल करें</span>
+                </a>
+            </button>
         </div>
 
         <!-- Brand Section -->
@@ -1036,6 +1722,79 @@
             }
         });
 
+        // Image zoom functionality
+        const adminAvatar = document.getElementById('adminAvatar');
+        const adminImage = document.getElementById('adminImage');
+        const zoomOverlay = document.getElementById('zoomOverlay');
+        const zoomedImage = document.getElementById('zoomedImage');
+        const closeZoom = document.getElementById('closeZoom');
+
+        if (adminAvatar && adminImage) {
+            // Click to open fullscreen zoom
+            adminAvatar.addEventListener('click', function(e) {
+                e.stopPropagation(); // Prevent card flip
+                
+                // Set the image source for zoomed view
+                zoomedImage.src = adminImage.src;
+                
+                // Show the zoom overlay
+                zoomOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+            });
+            
+            // Hover effect for desktop
+            adminAvatar.addEventListener('mouseenter', function() {
+                if (window.innerWidth > 768) { // Only on desktop
+                    this.classList.add('zoomed');
+                }
+            });
+            
+            adminAvatar.addEventListener('mouseleave', function() {
+                if (window.innerWidth > 768) {
+                    this.classList.remove('zoomed');
+                }
+            });
+            
+            // Touch devices - tap and hold for zoom
+            let touchTimer;
+            adminAvatar.addEventListener('touchstart', function(e) {
+                touchTimer = setTimeout(() => {
+                    this.classList.add('zoomed');
+                }, 500); // 500ms hold for zoom
+            });
+            
+            adminAvatar.addEventListener('touchend', function(e) {
+                clearTimeout(touchTimer);
+                this.classList.remove('zoomed');
+            });
+        }
+
+        // Close zoom overlay
+        if (closeZoom) {
+            closeZoom.addEventListener('click', function() {
+                zoomOverlay.classList.remove('active');
+                document.body.style.overflow = 'auto'; // Re-enable scrolling
+            });
+        }
+
+        // Close zoom overlay when clicking on background
+        if (zoomOverlay) {
+            zoomOverlay.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        }
+
+        // Close zoom overlay with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && zoomOverlay.classList.contains('active')) {
+                zoomOverlay.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
         // Form submission handling
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
@@ -1051,10 +1810,21 @@
         document.getElementById('closeSuccessPopup').addEventListener('click', function() {
             document.getElementById('successPopup').style.display = 'none';
         });
+        
+        // Admin flip card functionality with buttons
+        const adminCard = document.getElementById('adminCard');
+        const flipBtnFront = document.getElementById('flipBtnFront');
+        const flipBtnBack = document.getElementById('flipBtnBack');
+        
+        // Flip to back side
+        flipBtnFront.addEventListener('click', function() {
+            adminCard.classList.add('flipped');
+        });
+        
+        // Flip to front side
+        flipBtnBack.addEventListener('click', function() {
+            adminCard.classList.remove('flipped');
+        });
     </script>
 </body>
-
 </html>
-
-
-
